@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "378356094529",
+    "firebase_url": "https://ikazi-73429.firebaseio.com",
+    "project_id": "ikazi-73429",
+    "storage_bucket": "ikazi-73429.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378356094529:android:f797b78c8d1cc154",
+        "android_client_info": {
+          "package_name": "com.example.kelvincb.ikazi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378356094529-7l19em8st440ob10i9hmjplqh06svqtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqGEjYlb48_TKBO6K3XuHwCoOu45KIPrU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

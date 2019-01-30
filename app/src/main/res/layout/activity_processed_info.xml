@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main.mainFragments.userHistory.processedRequestPackage.processedInfo">
+
+    <pl.droidsonroids.gif.GifTextView
+        android:id="@+id/gifTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/profile_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textColor="#0e0e0e"
+
+        android:text="Name"
+        android:textStyle="bold"
+    />
+
+    <TextView
+        android:id="@+id/worker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignStart="@+id/jobDescription"
+        android:layout_alignTop="@+id/callworker"
+        android:text="TextView"
+        android:textColor="#0e0e0e" />
+
+    <TextView
+        android:id="@+id/textView_occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/callworker"
+        android:textSize="16dp"
+        android:text="Occupation"
+        android:textColor="#0e0e0e"
+
+        android:textStyle="bold"
+      />
+
+    <TextView
+        android:id="@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_alignStart="@+id/worker_name"
+        android:layout_alignTop="@+id/textView_occupation"
+        android:textColor="#0e0e0e"
+
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:textSize="16dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:text="Date"
+        android:textColor="#0e0e0e"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/date"
+        android:textColor="#0e0e0e"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/worker_name"
+        android:layout_alignTop="@+id/textView_date"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:textSize="16dp"
+        android:textColor="#0e0e0e"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="173dp"
+        android:text="Time"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/time"
+        android:textColor="#0e0e0e"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/worker_name"
+        android:layout_alignTop="@+id/textView_time"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView_jobdesc"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="224dp"
+        android:text="Job Description "
+        android:textColor="#0e0e0e"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/jobDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView_jobdesc"
+
+        android:layout_marginStart="129dp"
+        android:text="TextView"
+        android:textColor="#0e0e0e" />
+
+    <Button
+        android:id="@+id/callworker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView_name"
+        android:layout_marginEnd="25dp"
+        android:text="Call"
+        android:background="@drawable/button_main_background"
+        android:padding="5dp"
+        android:textColor="@android:color/white"
+        android:drawableRight="@drawable/phone"
+
+        />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="215dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:theme="@style/RatingBar"/>
+
+    <TextView
+        android:id="@+id/tvRatingScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="183dp"
+        android:text="Awesome. I love it"
+        android:textColor="#0e0e0e"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp"
+        android:background="@drawable/button_main_background"
+        android:text="Send feedback"
+        android:padding="5dp"
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:id="@+id/feedback_progressBar"
+        android:indeterminateDrawable="@drawable/progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRatingScale"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-183dp"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

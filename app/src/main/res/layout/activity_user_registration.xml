@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="49dp"
+            android:text="@string/app_name"
+            android:textColor="#545556"
+            android:textSize="35dp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="66dp" />
+
+        <!--  Name Label -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="173dp"
+            android:background="#bab5b5"
+            app:cardCornerRadius="40dp"
+            card_view:cardBackgroundColor="#bab5b5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profile_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myProfile"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:src="@drawable/ic_camera" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profile_photo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/myProfile"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                />
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <EditText
+            android:id="@+id/input_name_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="293dp"
+            android:background="@drawable/edittext_background"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:padding="10dp" />
+
+
+        <EditText
+
+            android:id="@+id/input_phone_number_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="225dp"
+            android:background="@drawable/edittext_background"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:hint="Phone Number (+2547)"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="@color/colorAccent" />
+
+
+        <!-- Signup Button -->
+        <ProgressBar
+            android:id="@+id/reg_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/input_phone_number_reg"
+            android:layout_marginTop="-225dp"
+            android:indeterminateDrawable="@drawable/progress" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_signup"
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="123dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/button_main_background"
+            android:text="Create Account"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.692" />
+
+        <TextView
+            android:id="@+id/signuptxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Sign Up"
+            android:textColor="#515150"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:fontFamily="sans-serif"
+            android:text="New here?"
+            android:textColor="#1FD5AD"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="125dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="95dp"
+            android:fontFamily="sans-serif"
+            android:text="Already a member?" />
+
+        <TextView
+            android:id="@+id/link_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="64dp"
+            android:textSize="20dip"
+            android:textColor="#1FD5AD"
+            android:fontFamily="sans-serif"
+            android:text="Login" />
+
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>

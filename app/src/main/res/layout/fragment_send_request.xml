@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/strokeColor"
+
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:id="@+id/upperLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/fill_form"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Fill In The Form To Send A Request"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="@color/strokeColor" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#fff"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+        <EditText
+            android:drawableLeft="@drawable/ic_date"
+            android:id="@+id/dateET"
+            android:hint=" Date"
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/colorAccent"
+
+            />
+
+
+                <EditText
+                    android:drawableLeft="@drawable/ic_time"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/timeET"
+                    android:hint=" Time"
+                    android:inputType="date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="center"
+                    android:padding="10dp"
+
+                    />
+
+
+                <EditText
+                    android:drawableLeft="@drawable/ic_description"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/jobDescET"
+                    android:hint=" Job Description"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="center"
+                    android:padding="10dp"
+
+                    />
+
+                <EditText
+                    android:drawableLeft="@drawable/my_home"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/landmarkET"
+                    android:hint=" Building Name or Landmark"
+                    android:inputType="textAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    />
+
+            <ProgressBar
+                android:visibility="gone"
+                android:indeterminateDrawable="@drawable/progress"
+                android:layout_marginTop="6dp"
+                android:id="@+id/send_request_progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:textColor="@color/strokeColor"
+                android:background="@color/colorPrimary"
+                android:id="@+id/btn_send_request"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="12dp"
+                android:text="Send Request"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
