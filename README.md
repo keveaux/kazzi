@@ -1,2 +1,2 @@
 #kazzi app
-find a worker near you
+app that helps you find a casual worker near you
