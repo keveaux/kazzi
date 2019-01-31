@@ -153,7 +153,7 @@ public class sendRequest extends Fragment {
             public void run() {
 
                 user_name = fetchUserName.getMname();
-                user_phone_no = fetchPhoneNumber.getPhone_no().substring(1);
+                user_phone_no = fetchPhoneNumber.getPhone_no();
 
             }
         }, 2000);

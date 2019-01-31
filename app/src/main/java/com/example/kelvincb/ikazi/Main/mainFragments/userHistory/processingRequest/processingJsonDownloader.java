@@ -41,6 +41,7 @@ public class processingJsonDownloader {
                     @Override
                     public void onResponse(JSONObject response) {
 
+
                         if(response.isNull("results")){
                             myProgressBar.setVisibility(View.GONE);
                             tv.setVisibility(View.VISIBLE);

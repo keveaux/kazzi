@@ -2,9 +2,11 @@ package com.example.kelvincb.ikazi.Main;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,24 +14,40 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.mainFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.myHistoryFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.userProfile;
 import com.example.kelvincb.ikazi.R;
+import com.example.kelvincb.ikazi.UserLoginAndRegister.LoginRegisterActivity;
+import com.example.kelvincb.ikazi.UserLoginAndRegister.userLogin.firebaseStuff.beforeLogin;
+import com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.RequestHandler;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.Objects;
+
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.UPDATE_URL;
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.name;
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.phone_no;
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.userImage;
+import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.UPLOAD_KEY;
+import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.UPLOAD_URL;
+import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.nameET;
+import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.phoneET;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
     Deque<Integer> mStack = new ArrayDeque<>();
     boolean isBackPressed  = false;
+
+    Bitmap bitmap;
+
 
 
     @Override
@@ -81,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 default:
             fragment = new mainFragment();
             loadFragment(fragment);
+
+
         }
     }
 
@@ -193,14 +216,68 @@ public class MainActivity extends AppCompatActivity {
             CropImage.ActivityResult result=CropImage.getActivityResult(data);
             if(resultCode==RESULT_OK){
                 try {
-                    Bitmap bitmap= MediaStore.Images.Media.getBitmap(Objects.requireNonNull(this).getContentResolver(),result.getUri());
-                    ImageView image = findViewById(R.id.user_profile_photo2);
-                    image.setImageBitmap(bitmap);
+                    bitmap= MediaStore.Images.Media.getBitmap(Objects.requireNonNull(this).getContentResolver(),result.getUri());
+//                    ImageView image = findViewById(R.id.user_profile_photo2);
+                    userImage.setImageBitmap(bitmap);
+                    userImage.setTag("UpdatedTag");
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             }
         }
+    }
+
+    public void updateData(){
+
+        class UploadData extends AsyncTask<Bitmap,Void,String> {
+
+            ProgressDialog loading;
+            RequestHandler rh = new RequestHandler();
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(MainActivity.this, "Updating...", null,true,true);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                if(s.equals("Successfully Uploaded")){
+
+                }
+
+                Toast.makeText(MainActivity.this, ""+s, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            protected String doInBackground(Bitmap... params) {
+                Bitmap bitmap = params[0];
+                String uploadImage = getStringImage(bitmap);
+
+                HashMap<String,String> data = new HashMap<>();
+
+                data.put("image", uploadImage);
+                data.put("phone",phone_no.getText().toString());
+                data.put("name",name.getText().toString());
+                String result = rh.sendPostRequest(UPDATE_URL,data);
+
+                return result;
+            }
+        }
+
+        UploadData ui = new UploadData();
+        ui.execute(bitmap);
+    }
+
+    public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
     }
 
 }

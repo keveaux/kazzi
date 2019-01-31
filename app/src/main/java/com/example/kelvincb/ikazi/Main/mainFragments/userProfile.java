@@ -16,12 +16,18 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+
+import com.example.kelvincb.ikazi.Main.MainActivity;
+import com.example.kelvincb.ikazi.fetchImage;
+import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -70,20 +76,22 @@ import static android.app.Activity.RESULT_OK;
 public class userProfile extends Fragment {
 
     View view;
-    EditText name,phone_no;
+   public static EditText name,phone_no;
     Button update;
     ProgressBar progressBar;
 
     TextView myprofile;
 
-    ImageView userImage;
+    public static ImageView userImage;
 
-    private static final String SERVER_ADDRESS="http://ecolaneventures.co.ke/";
+
+
+
+    public static final String UPDATE_URL = "http://104.248.124.210/android/iKazi/phpFiles/updateProfile.php";
 
     /**
      * Persist URI image to crop URI if specific permissions are required
      */
-    private static int RESULT_LOAD_IMG = 1;
     private FirebaseAuth mAuth;
 
 
@@ -135,13 +143,17 @@ public class userProfile extends Fragment {
         name.setTypeface(font);
         update.setTypeface(font);
 
-        new downloadphoto(fetchPhoneNumber.getPhone_no()).execute();
 
         phone_no.setText(fetchPhoneNumber.getPhone_no());
         phone_no.setEnabled(false);
 
-                final fetchUserName fetchUserName=new fetchUserName(getContext());
-                fetchUserName.fetchname();
+        final fetchUserName fetchUserName=new fetchUserName(getContext());
+        fetchUserName.fetchname();
+
+        final fetchImage fetchImage=new fetchImage(getContext());
+        fetchImage.fetchimageurl();
+
+
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -149,10 +161,34 @@ public class userProfile extends Fragment {
             public void run() {
 
                 name.setText(fetchUserName.getMname());
+                PicassoClient.loadImage(fetchImage.getImageurl(),userImage);
 
-            }},1000);
+                userImage.setTag("0");
+                name.setTag("0");
 
 
+            }},2000);
+
+
+
+
+
+        name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                name.setTag("changed");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
         userImage.setOnClickListener(new View.OnClickListener() {
@@ -167,16 +203,21 @@ public class userProfile extends Fragment {
                     @Override
                     public void onClick(View v) {
 
-                        if(userImage.getDrawable() == null){
-                            Toast.makeText(getActivity(), "you have not added an image", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Bitmap image=((BitmapDrawable)userImage.getDrawable()).getBitmap();
-                            new UploadImage(image,fetchPhoneNumber.getPhone_no()).execute();
-                        }
+
 
 
                         if (!TextUtils.isEmpty(name.getText())) {
-                            updateProfile();
+                            if(userImage.getDrawable() == null){
+                                Toast.makeText(getActivity(), "you have not added an image", Toast.LENGTH_SHORT).show();
+                            }else {
+                                if (userImage.getTag().equals("UpdatedTag") || name.getTag().equals("changed")){
+                                    ((MainActivity)getActivity()).updateData();
+                                } else {
+                                    Toast.makeText(getActivity(), "you have not changed anything", Toast.LENGTH_SHORT).show();
+
+                                }
+
+                            }
                         } else {
                             name.setError("Please Enter your Name");
                         }
@@ -188,102 +229,6 @@ public class userProfile extends Fragment {
 
 
         return view;
-    }
-
-    private void updateProfile() {
-        progressBar.setVisibility(View.VISIBLE);
-        String MyURL = "http://104.248.124.210/android/iKazi/phpFiles/updateProfile.php";
-
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new com.android.volley.Response.Listener<String>(){
-
-            @Override
-            public void onResponse(String response) {
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(getContext(), ""+response, Toast.LENGTH_SHORT).show();
-            }
-        }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(),error+"",Toast.LENGTH_LONG).show();
-
-                }
-        }){
-
-            @Override
-            protected Map<String,String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<>();
-                String user_name=name.getText().toString();
-                String user_phone_no=phone_no.getText().toString();
-                params.put("name",user_name);
-                params.put("phone",user_phone_no);
-
-                return params;
-            }
-
-        };
-
-        RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
-        requestQueue.add(stringRequest);
-
-    }
-
-    private class UploadImage extends AsyncTask<Void,Void,Void> {
-
-        Bitmap image;
-        String name;
-
-
-
-        public UploadImage(Bitmap image, String name) {
-
-            this.image=image;
-            this.name=name;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            //compress the image into bytearrayoutputstream and then encode it
-            ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-            image.compress(Bitmap.CompressFormat.WEBP,100,byteArrayOutputStream);
-            String encodeimage= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
-
-            //put the encoded image and its name to a list and send it to the server
-            ArrayList<NameValuePair> datatosend=new ArrayList<>();
-            datatosend.add(new BasicNameValuePair("image",encodeimage));
-            datatosend.add(new BasicNameValuePair("name",name));
-
-            HttpParams httprequestparams=getHttpParams();
-            //client helps us send data to the server
-            DefaultHttpClient httpClient=new DefaultHttpClient(httprequestparams);
-            HttpPost httpPost=new HttpPost(SERVER_ADDRESS+"savepicture.php");
-
-
-            //post the data to the server
-            try {
-                httpPost.setEntity(new UrlEncodedFormEntity(datatosend));
-                httpClient.execute(httpPost);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            Toast.makeText(getActivity(),"image uploaded successfully",Toast.LENGTH_LONG).show();
-
-
-            super.onPostExecute(aVoid);
-        }
-
-    }
-
-    private HttpParams getHttpParams(){
-        HttpParams httprequestparams=new BasicHttpParams();
-        HttpConnectionParams.setConnectionTimeout(httprequestparams,1000*30);
-        HttpConnectionParams.setSoTimeout(httprequestparams,1000*30);
-        return httprequestparams;
     }
 
 
@@ -328,37 +273,7 @@ public class userProfile extends Fragment {
     }
 
 
-    private class downloadphoto extends AsyncTask<Void,Void,Bitmap> {
 
-        String name;
-        public downloadphoto(String name) {
-            this.name=name;
-        }
-
-        @Override
-        protected Bitmap doInBackground(Void... voids) {
-            String url=SERVER_ADDRESS+"pictures/"+name+".jpg";
-
-            try {
-                //establish a connection to the image we want
-                URLConnection urlConnection=new URL(url).openConnection();
-                urlConnection.setConnectTimeout(1000*30);
-                urlConnection.setReadTimeout(1000*30);
-                //convert it into an input stream and decode it which returns the bitmap
-                return BitmapFactory.decodeStream((InputStream)urlConnection.getContent(),null,null);
-            }catch (Exception e){
-                e.printStackTrace();
-                return null;
-
-            }
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            userImage.setImageBitmap(bitmap);
-            super.onPostExecute(bitmap);
-        }
-    }
 
 
 }

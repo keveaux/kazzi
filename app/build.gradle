@@ -54,6 +54,8 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpcore:4.4.1'
     implementation 'org.apache.httpcomponents:httpclient:4.5'
     implementation 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation 'net.gotev:uploadservice:2.1'
+
 
     //For Step View
     implementation 'com.shuhart.stepview:stepview:1.2.8'
