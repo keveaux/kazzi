@@ -167,7 +167,9 @@ public class userProfile extends Fragment {
                 name.setTag("0");
 
 
+
             }},2000);
+
 
 
 
@@ -182,6 +184,9 @@ public class userProfile extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 name.setTag("changed");
+                update.setEnabled(true);
+                update.setAlpha(1f);
+                update.setClickable(true);
             }
 
             @Override
@@ -204,13 +209,12 @@ public class userProfile extends Fragment {
                     public void onClick(View v) {
 
 
-
-
                         if (!TextUtils.isEmpty(name.getText())) {
                             if(userImage.getDrawable() == null){
                                 Toast.makeText(getActivity(), "you have not added an image", Toast.LENGTH_SHORT).show();
                             }else {
                                 if (userImage.getTag().equals("UpdatedTag") || name.getTag().equals("changed")){
+                                    Toast.makeText(getActivity(), ""+userImage.getTag().toString(), Toast.LENGTH_SHORT).show();
                                     ((MainActivity)getActivity()).updateData();
                                 } else {
                                     Toast.makeText(getActivity(), "you have not changed anything", Toast.LENGTH_SHORT).show();

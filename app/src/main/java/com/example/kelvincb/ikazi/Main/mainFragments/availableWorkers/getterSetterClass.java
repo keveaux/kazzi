@@ -1,7 +1,7 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers;
 
 public class getterSetterClass {
-    String id,name,rating,numberOfRates,imageUrl,occupation,longitude,latitude,skillSet,phoneNumber;
+    String id,name,rating,numberOfRates,imageUrl,occupation,longitude,latitude,skillSet,phoneNumber,location;
     float distance;
 
     public String getName() {
@@ -56,6 +56,10 @@ public class getterSetterClass {
         return latitude;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
@@ -90,5 +94,9 @@ public class getterSetterClass {
 
     public void setDistance(float distance) {
         this.distance = distance;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

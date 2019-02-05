@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +32,6 @@ import java.util.Map;
 public class processedInfo extends AppCompatActivity {
 
     TextView worker_name, occupationTV, timeTV, dateTV, jobDescriptionTV,nametv,occupationtextview,datetextview,timetextview,jobdesctv;
-    Button callworker;
     String workerId,rating;
     ProgressBar progressBar;
     RatingBar mRatingBar;
@@ -56,7 +56,9 @@ public class processedInfo extends AppCompatActivity {
         progressBar=findViewById(R.id.feedback_progressBar);
 
 
-        callworker = findViewById(R.id.callworker);
+
+        FloatingActionButton fab=findViewById(R.id.fab);
+
 
         Typeface myfont=Typeface.createFromAsset(getAssets(),"RobotoSlab-Bold.ttf");
         nametv.setTypeface(myfont);
@@ -94,7 +96,9 @@ public class processedInfo extends AppCompatActivity {
             jobDescriptionTV.setText(jobDescription);
 
 
-            callworker.setOnClickListener(new View.OnClickListener() {
+
+
+            fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", worker_pno, null));

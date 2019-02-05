@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:layout_columnWeight="1"
         android:layout_gravity="center"
         android:layout_margin="10dp"
@@ -41,13 +41,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="110dp"
-                android:layout_marginTop="24dp"
-                android:paddingLeft="10dp"
-                android:text="name"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="4dp"
+                android:text="WORK"
                 android:textColor="@color/colorAccent"
-                android:textSize="10sp"
-                android:textStyle="bold" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/distance"
@@ -55,67 +53,51 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignStart="@+id/nametxt"
-                android:layout_marginBottom="54dp"
-                android:paddingLeft="10dp"
-                android:text="distance"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorAccent"
-                android:textSize="10sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="18dp"
+                android:text="date"
+                android:textColor="@color/colorAccent" />
+
+
+            <View
+                android:layout_width="262dp"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="53dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="102dp"
+                android:layout_toRightOf="@+id/worker_image"
+                android:background="#1d1d1d"
+                />
+
+
+            <TextView
+                android:id="@+id/skill_set"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="4dp"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/nametxt"
+                android:layout_below="@+id/nametxt"
+                android:text="kevin muriithi" />
+
 
 
             <TextView
                 android:id="@+id/ratingtxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/nametxt"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="56dp"
-                android:paddingLeft="10dp"
-                android:text="rating"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorAccent"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:layout_alignBottom="@+id/ratingtxt"
-                android:layout_toEndOf="@+id/ratingtxt"
-                android:src="@drawable/ic_star_black" />
-
-
-            <TextView
-                android:id="@+id/skill_set"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/nametxt"
+                android:layout_below="@+id/skill_set"
                 android:layout_centerVertical="true"
-                android:paddingLeft="10dp"
-                android:text="rating"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorAccent"
-                android:textSize="10sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_star_black"
+                android:text="TextView" />
 
 
-            <!--<Button-->
-                <!--android:id="@+id/book_worker"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:layout_alignParentEnd="true"-->
-                <!--android:layout_gravity="end"-->
-                <!--android:layout_marginEnd="14dp"-->
-                <!--android:background="@drawable/button_main_background"-->
-                <!--android:elevation="6dp"-->
-                <!--android:padding="5dp"-->
-                <!--android:text="book worker"-->
-                <!--android:textColor="@color/strokeColor" />-->
-
-        </RelativeLayout>
+                  </RelativeLayout>
 
 
     </android.support.v7.widget.CardView>

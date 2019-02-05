@@ -63,6 +63,7 @@ public class availableWorkersFragment extends Fragment {
     private final static int ALL_PERMISSIONS_RESULT = 101;
     LocationTrack locationTrack;
      NoInternet noInternet ;
+    String streetName;
 
 
     @Override
@@ -150,6 +151,7 @@ public class availableWorkersFragment extends Fragment {
                 if(noInternet.isConnected(getActivity())){
 
                     getmyLocation();
+                    fetchWorkers();
                     }else {
                     noInternet.builddialog(getActivity());
                 }
@@ -163,14 +165,16 @@ public class availableWorkersFragment extends Fragment {
 
                     lat = Double.parseDouble(latitude);
                     lon = Double.parseDouble(longitude);
-                    String streetName = streetName(lat, lon);
+                    streetName = streetName(lat, lon);
 
                     locationtxt.setText(streetName);
+
+                    fetchWorkers();
                 }
                 break;
         }
 
-                fetchWorkers();
+
 
 
         return view;
@@ -190,7 +194,7 @@ public class availableWorkersFragment extends Fragment {
 
                     lat = Double.parseDouble(latitude);
                     lon = Double.parseDouble(longitude);
-                    String streetName = streetName(lat, lon);
+                    streetName = streetName(lat, lon);
 
                     locationtxt.setText(streetName);
                 }
@@ -255,7 +259,7 @@ public class availableWorkersFragment extends Fragment {
                         if (mlatitude == 0.0) {
                             locationtxt.setText("cannot find location \n press button below to set location");
                         } else {
-                            new JsonDownloader(getActivity()).retrieveWorkerInfo(SITE_URL, lv, myProgressBar, noworker, noworkertxt, mlongitude, mlatitude);
+                            new JsonDownloader(getActivity()).retrieveWorkerInfo(streetName,SITE_URL, lv, myProgressBar, noworker, noworkertxt, mlongitude, mlatitude);
                         }
 
                     }}
@@ -375,7 +379,7 @@ public class availableWorkersFragment extends Fragment {
                     lon = locationTrack.getLongitude();
                     lat = locationTrack.getLatitude();
 
-                    String streetName = streetName(locationTrack.getLatitude(), locationTrack.getLongitude());
+                    streetName = streetName(locationTrack.getLatitude(), locationTrack.getLongitude());
 
                     locationtxt.setText(streetName);
                 } else {

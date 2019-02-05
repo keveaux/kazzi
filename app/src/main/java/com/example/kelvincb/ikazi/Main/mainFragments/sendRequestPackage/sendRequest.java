@@ -38,7 +38,9 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,8 +55,9 @@ public class sendRequest extends Fragment {
     TextView fill_form;
     ProgressBar progressBar;
     String user_name,user_phone_no,name;
-    String workerId ;
+    String workerId ,location;
     private InterstitialAd mInterstitialAd;
+    String formattedDate;
 
 
 
@@ -133,7 +136,12 @@ public class sendRequest extends Fragment {
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
 
+        Date c = Calendar.getInstance().getTime();
 
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+         formattedDate = df.format(c);
+
+        Toast.makeText(getActivity(), ""+formattedDate, Toast.LENGTH_SHORT).show();
 
 
         final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(getContext());
@@ -145,7 +153,9 @@ public class sendRequest extends Fragment {
 
         workerId= getArguments().getString("id");
 
-         name=getArguments().getString("name");
+        name=getArguments().getString("name");
+        location=getArguments().getString("location");
+
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -210,6 +220,9 @@ public class sendRequest extends Fragment {
             @Override
             public void onResponse(String response) {
                 progressBar.setVisibility(View.GONE);
+
+                Toast.makeText(getActivity(), ""+response, Toast.LENGTH_SHORT).show();
+
                 if(response.equals("successful")){
                     Toast.makeText(getContext(), "Request sent wait for confirmation", Toast.LENGTH_SHORT).show();
 
@@ -244,9 +257,12 @@ public class sendRequest extends Fragment {
                 params.put("date", date);
                 params.put("time", time);
                 params.put("job", jobDesctiption);
+                params.put("location",location);
                 params.put("landmark", landmark);
                 params.put("workerId",workerId);
                 params.put("status","0");
+                params.put("currentdate",formattedDate);
+
 
 
 

@@ -108,6 +108,7 @@ public class adapterClass extends BaseAdapter {
 
                 args.putString("id", getterSetterClass.getId());
                 args.putString("name",getterSetterClass.getName());
+                args.putString("location",getterSetterClass.getLocation());
 
                 myFragment.setArguments(args);
 

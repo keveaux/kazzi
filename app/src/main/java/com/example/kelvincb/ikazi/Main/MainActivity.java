@@ -217,9 +217,9 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 try {
                     bitmap= MediaStore.Images.Media.getBitmap(Objects.requireNonNull(this).getContentResolver(),result.getUri());
-//                    ImageView image = findViewById(R.id.user_profile_photo2);
                     userImage.setImageBitmap(bitmap);
                     userImage.setTag("UpdatedTag");
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -254,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected String doInBackground(Bitmap... params) {
+
                 Bitmap bitmap = params[0];
                 String uploadImage = getStringImage(bitmap);
 

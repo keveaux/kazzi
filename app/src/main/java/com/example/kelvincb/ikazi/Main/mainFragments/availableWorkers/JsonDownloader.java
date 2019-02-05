@@ -40,7 +40,7 @@ public class JsonDownloader {
         this.c = c;
     }
 
-    public void retrieveWorkerInfo(String URL, final ListView listView, final ProgressBar myProgressBar, final ImageView imv, final TextView tv, final Double mlongitude, final Double mlatitude) {
+    public void retrieveWorkerInfo(final String streetName, final String URL, final ListView listView, final ProgressBar myProgressBar, final ImageView imv, final TextView tv, final Double mlongitude, final Double mlatitude) {
 
         final ArrayList<getterSetterClass> workerList = new ArrayList<>();
 
@@ -93,6 +93,7 @@ public class JsonDownloader {
                                 GettersSetters.setLatitude(latitude);
                                 GettersSetters.setSkillSet(skillSet);
                                 GettersSetters.setPhoneNumber(phoneNumber);
+                                GettersSetters.setLocation(streetName);
 
 
                                 Location locationA = new Location("point A");
