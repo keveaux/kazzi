@@ -12,6 +12,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,12 +20,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.recyclerViewItems.MyAdapter;
 import com.example.kelvincb.ikazi.Main.recyclerViewItems.Worker;
 
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.fetchUserName;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 
@@ -50,6 +53,8 @@ public class mainFragment extends Fragment {
 
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_main, container, false);
+
+
 
         rootView = view.findViewById(R.id.root_layout);
         rootView.requestFocus();
@@ -82,6 +87,9 @@ public class mainFragment extends Fragment {
 
 
                 welcome.setText("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
+
+
+
 
 
             }

@@ -79,6 +79,7 @@ public class JsonDownloader {
                                 String latitude=jsonObject.getString("latitude");
                                 String skillSet=jsonObject.getString("skillSet");
                                 String phoneNumber=jsonObject.getString("phonenumber");
+                                String token=jsonObject.getString("token");
 
 
 
@@ -94,6 +95,7 @@ public class JsonDownloader {
                                 GettersSetters.setSkillSet(skillSet);
                                 GettersSetters.setPhoneNumber(phoneNumber);
                                 GettersSetters.setLocation(streetName);
+                                GettersSetters.setToken(token);
 
 
                                 Location locationA = new Location("point A");

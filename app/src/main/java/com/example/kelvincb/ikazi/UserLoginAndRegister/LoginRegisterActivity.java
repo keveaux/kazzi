@@ -13,11 +13,13 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.UserLoginAndRegister.userLogin.firebaseStuff.beforeLogin;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.RequestHandler;
 import com.example.kelvincb.ikazi.splashScreen.SplashScreenActivity;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -29,6 +31,7 @@ import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.u
 import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.UPLOAD_URL;
 import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.nameET;
 import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.phoneET;
+import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment.token;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
@@ -94,7 +97,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                if(s.equals("Successfully Uploaded")){
+                Toast.makeText(LoginRegisterActivity.this, ""+s, Toast.LENGTH_SHORT).show();
+                if(s.equals("\"Successfully Uploaded\"")){
+
                     Bundle bundle = new Bundle();
                     bundle.putString("key",phoneET.getText().toString()); // Put anything what you want
 
@@ -116,9 +121,11 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
                 HashMap<String,String> data = new HashMap<>();
 
+
                 data.put(UPLOAD_KEY, uploadImage);
                 data.put("phone",phoneET.getText().toString());
                 data.put("name",nameET.getText().toString());
+                data.put("token",token);
                 String result = rh.sendPostRequest(UPLOAD_URL,data);
 
                 return result;

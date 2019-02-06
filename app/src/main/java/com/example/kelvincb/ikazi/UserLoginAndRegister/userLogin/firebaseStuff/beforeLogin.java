@@ -25,6 +25,7 @@ import com.example.kelvincb.ikazi.Main.MainActivity;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.userRegistrationFragment;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,6 +51,9 @@ public class beforeLogin extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_before_login, container, false);
+
+        String token= FirebaseInstanceId.getInstance().getToken();
+//        Toast.makeText(getActivity(), ""+token, Toast.LENGTH_SHORT).show();
 
         details=view.findViewById(R.id.detes);
         phone_no=view.findViewById(R.id.phonenumber);

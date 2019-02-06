@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.LoginRegisterActivity;
 import com.example.kelvincb.ikazi.R;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.HashMap;
@@ -52,6 +53,7 @@ public class userRegistrationFragment extends Fragment {
 
     public static final String UPLOAD_URL = "http://104.248.124.210/android/iKazi/phpFiles/sendRegistrationDetails.php";
     public static final String UPLOAD_KEY = "image";
+    public static String token = "";
 
 
 
@@ -62,6 +64,8 @@ public class userRegistrationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.activity_user_registration, container, false);
+
+        token= FirebaseInstanceId.getInstance().getToken();
 
         user_profile_photo=view.findViewById(R.id.user_profile_photo2);
 

@@ -1,7 +1,7 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers;
 
 public class getterSetterClass {
-    String id,name,rating,numberOfRates,imageUrl,occupation,longitude,latitude,skillSet,phoneNumber,location;
+    String id,name,rating,numberOfRates,imageUrl,occupation,longitude,latitude,skillSet,phoneNumber,location,token;
     float distance;
 
     public String getName() {
@@ -18,6 +18,14 @@ public class getterSetterClass {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getId() {

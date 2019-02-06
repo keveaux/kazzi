@@ -73,9 +73,12 @@ public class processingAdapterClass extends BaseAdapter{
         if(getterSetterClass.getStatus().equals("0")){
             status.setText(" PENDING ");
             status.setTextColor(Color.parseColor("#FFFFFF"));
+            status.setBackgroundResource(R.drawable.rounded_edges);
         }else {
             status.setText(" REJECTED");
-            status.setTextColor(Color.RED);
+            status.setBackgroundResource(R.drawable.rounde_edges_denied);
+
+            status.setTextColor(Color.parseColor("#FFFFFF"));
         }
 
         //fetch image from online using picasso

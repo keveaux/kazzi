@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest;
 import com.example.kelvincb.ikazi.R;
@@ -92,6 +93,7 @@ public class adapterClass extends BaseAdapter {
         }
 
 
+
         //fetch image from online using picasso
         PicassoClient.loadImage(getterSetterClass.getImageUrl(),image);
 
@@ -109,6 +111,7 @@ public class adapterClass extends BaseAdapter {
                 args.putString("id", getterSetterClass.getId());
                 args.putString("name",getterSetterClass.getName());
                 args.putString("location",getterSetterClass.getLocation());
+                args.putString("token",getterSetterClass.getToken());
 
                 myFragment.setArguments(args);
 

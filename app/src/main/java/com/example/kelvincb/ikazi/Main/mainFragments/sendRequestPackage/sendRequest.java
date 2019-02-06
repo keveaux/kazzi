@@ -29,8 +29,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.myHistoryFragment;
-import com.example.kelvincb.ikazi.MyAdmob;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.fetchPhoneNumber;
 import com.example.kelvincb.ikazi.fetchUserName;
@@ -54,7 +52,7 @@ public class sendRequest extends Fragment {
     Typeface font;
     TextView fill_form;
     ProgressBar progressBar;
-    String user_name,user_phone_no,name;
+    String user_name,user_phone_no,name,token;
     String workerId ,location;
     private InterstitialAd mInterstitialAd;
     String formattedDate;
@@ -141,7 +139,6 @@ public class sendRequest extends Fragment {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
          formattedDate = df.format(c);
 
-        Toast.makeText(getActivity(), ""+formattedDate, Toast.LENGTH_SHORT).show();
 
 
         final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(getContext());
@@ -155,6 +152,7 @@ public class sendRequest extends Fragment {
 
         name=getArguments().getString("name");
         location=getArguments().getString("location");
+        token=getArguments().getString("token");
 
 
         final Handler handler = new Handler();
@@ -262,8 +260,7 @@ public class sendRequest extends Fragment {
                 params.put("workerId",workerId);
                 params.put("status","0");
                 params.put("currentdate",formattedDate);
-
-
+                params.put("token",token);
 
 
                 return params;

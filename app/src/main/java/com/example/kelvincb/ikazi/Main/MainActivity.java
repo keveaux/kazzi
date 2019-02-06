@@ -31,6 +31,7 @@ import com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.RequestH
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -62,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
     Bitmap bitmap;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
 
