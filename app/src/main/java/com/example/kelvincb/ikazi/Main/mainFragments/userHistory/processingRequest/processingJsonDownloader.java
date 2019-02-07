@@ -61,6 +61,7 @@ public class processingJsonDownloader {
                                 String name=jsonObject.getString("name");
                                 String occupation=jsonObject.getString("occupation");
                                 String imageUrl=jsonObject.getString("imageUrl");
+                                String datesent=jsonObject.getString("currentdate");
 
 
 
@@ -70,6 +71,7 @@ public class processingJsonDownloader {
                                 GettersSetters.setOccupation(occupation);
                                 GettersSetters.setStatus(status);
                                 GettersSetters.setImageUrl(imageUrl);
+                                GettersSetters.setDatesent(datesent);
 
                                 requestList.add(GettersSetters);
 

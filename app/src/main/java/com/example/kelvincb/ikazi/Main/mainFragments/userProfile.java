@@ -214,7 +214,6 @@ public class userProfile extends Fragment {
                                 Toast.makeText(getActivity(), "you have not added an image", Toast.LENGTH_SHORT).show();
                             }else {
                                 if (userImage.getTag().equals("UpdatedTag") || name.getTag().equals("changed")){
-                                    Toast.makeText(getActivity(), ""+userImage.getTag().toString(), Toast.LENGTH_SHORT).show();
                                     ((MainActivity)getActivity()).updateData();
                                 } else {
                                     Toast.makeText(getActivity(), "you have not changed anything", Toast.LENGTH_SHORT).show();

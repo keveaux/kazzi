@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
 
@@ -218,6 +218,8 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 try {
                     bitmap= MediaStore.Images.Media.getBitmap(Objects.requireNonNull(this).getContentResolver(),result.getUri());
+                    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 10, bytes);
                     userImage.setImageBitmap(bitmap);
                     userImage.setTag("UpdatedTag");
 
@@ -230,7 +232,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateData(){
 
+        bitmap = ((BitmapDrawable)userImage.getDrawable()).getBitmap();
+
+
         class UploadData extends AsyncTask<Bitmap,Void,String> {
+
+
 
             ProgressDialog loading;
             RequestHandler rh = new RequestHandler();

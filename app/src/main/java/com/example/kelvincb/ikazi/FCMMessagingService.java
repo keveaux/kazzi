@@ -62,13 +62,13 @@ public class FCMMessagingService extends FirebaseMessagingService{
         NotificationCompat.Builder notificationbuilder=new NotificationCompat.Builder(this);
         notificationbuilder.setContentTitle(getString(R.string.app_name));
         notificationbuilder.setContentText(message);
-        Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         notificationbuilder.setSound(soundUri);
         notificationbuilder.setSmallIcon(R.mipmap.ic_launcher);
         notificationbuilder.setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.ic_launcher));
         notificationbuilder.setAutoCancel(true);
         Vibrator v= (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(1000);
+        v.vibrate(3000);
         notificationbuilder.setContentIntent(pendingIntent);
         NotificationManager notificationManager= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0,notificationbuilder.build());

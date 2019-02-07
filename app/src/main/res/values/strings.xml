@@ -131,6 +131,7 @@
     <string name="title_activity_trial">Main2tActivity</string>
     <string name="noprocessed">your processed requests will appear here</string>
     <string name="processing">requests being processed will appear here</string>
+    <string name="rejected">oops your request was rejected :(</string>
 
 
 </resources>

@@ -2,7 +2,7 @@ package com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processingRequ
 
 public class processingGetterSetters {
 
-    String workerId,status,name,occupation,imageUrl;
+    String workerId,status,name,occupation,imageUrl,datesent;
 
     public String getWorkerId() {
         return workerId;
@@ -42,5 +42,13 @@ public class processingGetterSetters {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getDatesent() {
+        return datesent;
+    }
+
+    public void setDatesent(String datesent) {
+        this.datesent = datesent;
     }
 }

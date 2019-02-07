@@ -68,6 +68,9 @@ public class processedJsonDownloader {
                                 String occupation=jsonObject.getString("occupation");
                                 String imageUrl=jsonObject.getString("imageUrl");
                                 String worker_pno=jsonObject.getString("phonenumber");
+                                String daterequestsent=jsonObject.getString("currentdate");
+                                String daterequesthandled=jsonObject.getString("daterequesthandled");
+                                String status=jsonObject.getString("status");
 
 
 
@@ -85,6 +88,9 @@ public class processedJsonDownloader {
                                 GettersSetters.setOccupation(occupation);
                                 GettersSetters.setImageUrl(imageUrl);
                                 GettersSetters.setWorker_phone_number(worker_pno);
+                                GettersSetters.setDaterequestsent(daterequestsent);
+                                GettersSetters.setDaterequesthandled(daterequesthandled);
+                                GettersSetters.setStatus(status);
 
 
                                 requestList.add(GettersSetters);

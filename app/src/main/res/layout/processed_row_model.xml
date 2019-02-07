@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_columnWeight="1"
         android:layout_gravity="center"
         android:layout_margin="10dp"
@@ -41,8 +41,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="110dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:paddingLeft="10dp"
+                android:drawableLeft="@drawable/person"
+                android:drawablePadding="4dp"
                 android:text="name"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorAccent"
@@ -53,15 +55,48 @@
             <TextView
                 android:id="@+id/processed_occupation"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignStart="@+id/processed_nametxt"
-                android:layout_marginBottom="17dp"
+                android:layout_marginBottom="44dp"
                 android:paddingLeft="10dp"
                 android:text="occupation"
+                android:drawableLeft="@drawable/ic_work"
+                android:drawablePadding="4dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/processed_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/processed_nametxt"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="10dp"
+                android:text="occupation"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="4dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/processed_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="status"
+                android:textColor="@color/strokeColor"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 

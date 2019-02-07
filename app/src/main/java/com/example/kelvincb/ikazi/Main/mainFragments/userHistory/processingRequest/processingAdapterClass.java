@@ -57,12 +57,14 @@ public class processingAdapterClass extends BaseAdapter{
         TextView nametxt= convertView.findViewById(R.id.processing_nametxt);
         TextView occupation=convertView.findViewById(R.id.processing_occupation);
         TextView status=convertView.findViewById(R.id.status);
+        TextView date=convertView.findViewById(R.id.processing_date);
         ImageView image=convertView.findViewById(R.id.processing_worker_image);
 
         Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
         occupation.setTypeface(font);
         status.setTypeface(font);
         nametxt.setTypeface(font);
+        date.setTypeface(font);
 
 
 
@@ -70,6 +72,7 @@ public class processingAdapterClass extends BaseAdapter{
 
         nametxt.setText(getterSetterClass.getName());
         occupation.setText(getterSetterClass.getOccupation());
+        date.setText(getterSetterClass.getDatesent());
         if(getterSetterClass.getStatus().equals("0")){
             status.setText(" PENDING ");
             status.setTextColor(Color.parseColor("#FFFFFF"));

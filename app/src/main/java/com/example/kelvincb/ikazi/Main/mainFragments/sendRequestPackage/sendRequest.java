@@ -261,6 +261,7 @@ public class sendRequest extends Fragment {
                 params.put("status","0");
                 params.put("currentdate",formattedDate);
                 params.put("token",token);
+                params.put("datehandled","");
 
 
                 return params;

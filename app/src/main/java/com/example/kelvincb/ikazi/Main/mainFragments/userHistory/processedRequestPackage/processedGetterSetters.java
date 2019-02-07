@@ -1,7 +1,9 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processedRequestPackage;
 
 public class processedGetterSetters {
-    String user_name,user_phone_number,mdate,mtime,jobDescription,landmark,workerId,worker_name,occupation,imageUrl,worker_phone_number;
+    String user_name,user_phone_number,mdate,mtime,
+            jobDescription,landmark,workerId,worker_name,
+            occupation,imageUrl,worker_phone_number,daterequestsent,daterequesthandled,status;
 
     public String getUser_name() {
         return user_name;
@@ -47,6 +49,18 @@ public class processedGetterSetters {
         return worker_phone_number;
     }
 
+    public String getDaterequestsent() {
+        return daterequestsent;
+    }
+
+    public String getDaterequesthandled() {
+        return daterequesthandled;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
@@ -89,5 +103,17 @@ public class processedGetterSetters {
 
     public void setWorker_phone_number(String worker_phone_number) {
         this.worker_phone_number = worker_phone_number;
+    }
+
+    public void setDaterequestsent(String daterequestsent) {
+        this.daterequestsent = daterequestsent;
+    }
+
+    public void setDaterequesthandled(String daterequesthandled) {
+        this.daterequesthandled = daterequesthandled;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
