@@ -62,7 +62,7 @@ public class FCMMessagingService extends FirebaseMessagingService{
         NotificationCompat.Builder notificationbuilder=new NotificationCompat.Builder(this);
         notificationbuilder.setContentTitle(getString(R.string.app_name));
         notificationbuilder.setContentText(message);
-        Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+        Uri soundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         notificationbuilder.setSound(soundUri);
         notificationbuilder.setSmallIcon(R.mipmap.ic_launcher);
         notificationbuilder.setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.ic_launcher));

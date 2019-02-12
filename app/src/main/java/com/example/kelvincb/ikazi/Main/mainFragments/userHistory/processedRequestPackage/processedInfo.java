@@ -1,6 +1,9 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processedRequestPackage;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -10,11 +13,14 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,35 +31,52 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.LoginRegisterActivity;
+import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class processedInfo extends AppCompatActivity {
 
-    TextView worker_name, occupationTV, timeTV, dateTV, jobDescriptionTV,nametv,occupationtextview,datetextview,timetextview,jobdesctv;
-    String workerId,rating;
-    ProgressBar progressBar;
-    RatingBar mRatingBar;
+   private TextView worker_name,  timeTV, dateTV, jobDescriptionTV,occupationtextview,datetextview,timetextview,jobdesctv,TVskillset;
+   private String workerId,rating,name;
+    ImageView workerImage;
+    Toolbar toolbar;
+//    RatingBar mRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_processed_info);
 
-
-        nametv=findViewById(R.id.textView_name);
         occupationtextview=findViewById(R.id.textView_occupation);
         datetextview=findViewById(R.id.textView_date);
         timetextview=findViewById(R.id.textView_time);
         jobdesctv=findViewById(R.id.textView_jobdesc);
 
         worker_name = findViewById(R.id.worker_name);
-        occupationTV = findViewById(R.id.occupation);
         timeTV = findViewById(R.id.time);
         dateTV = findViewById(R.id.date);
         jobDescriptionTV = findViewById(R.id.jobDescription);
-        progressBar=findViewById(R.id.feedback_progressBar);
+//        progressBar=findViewById(R.id.feedback_progressBar);
+        workerImage=findViewById(R.id.worker_profile_image);
+        TVskillset=findViewById(R.id.description);
+        toolbar=findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onBackPressed();
+            }
+        });
 
 
 
@@ -61,16 +84,14 @@ public class processedInfo extends AppCompatActivity {
 
 
         Typeface myfont=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
-        nametv.setTypeface(myfont);
         occupationtextview.setTypeface(myfont);
         datetextview.setTypeface(myfont);
         timetextview.setTypeface(myfont);
         jobdesctv.setTypeface(myfont);
 
 
-        Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+        Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
         worker_name.setTypeface(font);
-        occupationTV.setTypeface(font);
         timeTV.setTypeface(font);
         dateTV.setTypeface(font);
         jobDescriptionTV.setTypeface(font);
@@ -80,7 +101,9 @@ public class processedInfo extends AppCompatActivity {
 
         if (bundle != null) {
             //ObtainBundleData in the object
-            String name = bundle.getString("worker_name");
+             name = bundle.getString("worker_name");
+            String skillset=bundle.getString("skill");
+            String imageUrl=bundle.getString("url");
             String occupation = bundle.getString("occupation");
             String time = bundle.getString("time");
             String date = bundle.getString("date");
@@ -90,12 +113,14 @@ public class processedInfo extends AppCompatActivity {
 
 
             worker_name.setText(name);
-            occupationTV.setText(occupation);
             timeTV.setText(time);
             dateTV.setText(date);
             jobDescriptionTV.setText(jobDescription);
+            occupationtextview.setText(occupation);
 
+            PicassoClient.loadImage(imageUrl,workerImage);
 
+            TVskillset.setText(skillset);
 
 
             fab.setOnClickListener(new View.OnClickListener() {
@@ -113,93 +138,156 @@ public class processedInfo extends AppCompatActivity {
         }
 
 
-         mRatingBar =  findViewById(R.id.ratingBar);
+//         mRatingBar =  findViewById(R.id.ratingBar);
 
-        final TextView mRatingScale =  findViewById(R.id.tvRatingScale);
+//        final TextView mRatingScale =  findViewById(R.id.tvRatingScale);
 
-        mRatingScale.setText("Please rate "+worker_name.getText().toString());
+//        mRatingScale.setText("Please rate "+worker_name.getText().toString());
 
         Button mSendFeedback =  findViewById(R.id.btnSubmit);
 
-        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                mRatingScale.setText(String.valueOf(v));
-                switch ((int) ratingBar.getRating()) {
-                    case 1:
-                        mRatingScale.setText("Very bad");
-                        break;
-                    case 2:
-                        mRatingScale.setText("Need some improvement");
-                        break;
-                    case 3:
-                        mRatingScale.setText("Good");
-                        break;
-                    case 4:
-                        mRatingScale.setText("Great");
-                        break;
-                    case 5:
-                        mRatingScale.setText("Awesome. I love it");
-                        break;
-                    default:
-                        mRatingScale.setText("Please rate "+worker_name.getText().toString());
-                }
-            }
-        });
-
+//        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+//            @Override
+//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+//                mRatingScale.setText(String.valueOf(v));
+//                switch ((int) ratingBar.getRating()) {
+//                    case 1:
+//                        mRatingScale.setText("Very bad");
+//                        break;
+//                    case 2:
+//                        mRatingScale.setText("Need some improvement");
+//                        break;
+//                    case 3:
+//                        mRatingScale.setText("Good");
+//                        break;
+//                    case 4:
+//                        mRatingScale.setText("Great");
+//                        break;
+//                    case 5:
+//                        mRatingScale.setText("Awesome. I love it");
+//                        break;
+//                    default:
+//                        mRatingScale.setText("Please rate "+worker_name.getText().toString());
+//                }
+//            }
+//        });
+//
         mSendFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mRatingBar.getRating()==0) {
-                    Toast.makeText(processedInfo.this, "Please fill in the rating", Toast.LENGTH_LONG).show();
-                } else {
-                    rating= String.valueOf(mRatingBar.getRating());
-                    sendData();
-                    Toast.makeText(processedInfo.this, ""+mRatingBar.getRating(), Toast.LENGTH_SHORT).show();
-                    mRatingBar.setRating(0);
 
-                }
+                showDialog(processedInfo.this,"please rate "+name);
+//                if (mRatingBar.getRating()==0) {
+//                    Toast.makeText(processedInfo.this, "Please fill in the rating", Toast.LENGTH_LONG).show();
+//                } else {
+//                    rating= String.valueOf(mRatingBar.getRating());
+//                    sendData();
+//                    Toast.makeText(processedInfo.this, ""+mRatingBar.getRating(), Toast.LENGTH_SHORT).show();
+//                    mRatingBar.setRating(0);
+//
+//                }
+            }
+        });
+
+        Button report=findViewById(R.id.report);
+
+        report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+
+                /* Fill it with Data */
+                emailIntent.setType("plain/text");
+                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"creativebrands@gmail.com"});
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Complaint on worker: "+workerId);
+                emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+
+                /* Send it off to the Activity-Chooser */
+                startActivity(Intent.createChooser(emailIntent, "click on Gmail to send us an email"));
             }
         });
 
     }
 
-    private void sendData() {
-        progressBar.setVisibility(View.VISIBLE);
-        String MyURL="http://104.248.124.210/android/iKazi/phpFiles/sendRating.php";
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressBar.setVisibility(View.GONE);
+    public void showDialog(Activity activity, String msg){
+        final Dialog dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.ratingdialog);
 
-                if(response.equals("successful")){
-                    Toast.makeText(processedInfo.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
-                }
-                Toast.makeText(processedInfo.this, response, Toast.LENGTH_SHORT).show();
+
+
+        TextView text = dialog.findViewById(R.id.text_dialog);
+        text.setText(msg);
+
+        Typeface font1=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
+        text.setTypeface(font1);
+
+        Button dialogButton =  dialog.findViewById(R.id.btn_dialog);
+        dialogButton.setTypeface(font1);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
 
             }
-        }, new Response.ErrorListener() {
+        });
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(processedInfo.this,error+"",Toast.LENGTH_LONG).show();
+            public void onDismiss(DialogInterface dialog) {
+
 
 
             }
-        }){
+        });
 
-            @Override
-            protected Map<String,String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<>();
-                params.put("workerId",workerId);
-                params.put("rating", rating);
+        dialog.show();
 
-                return params;
-            }
+    }
 
-        };
+//    private void sendData() {
+//        progressBar.setVisibility(View.VISIBLE);
+//        String MyURL="http://104.248.124.210/android/iKazi/phpFiles/sendRating.php";
+//        StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                progressBar.setVisibility(View.GONE);
+//
+//                if(response.equals("successful")){
+//                    Toast.makeText(processedInfo.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
+//                }
+//                Toast.makeText(processedInfo.this, response, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(processedInfo.this,error+"",Toast.LENGTH_LONG).show();
+//
+//
+//            }
+//        }){
+//
+//            @Override
+//            protected Map<String,String> getParams() throws AuthFailureError {
+//                Map<String,String> params=new HashMap<>();
+//                params.put("workerId",workerId);
+//                params.put("rating", rating);
+//
+//                return params;
+//            }
+//
+//        };
+//
+//        RequestQueue requestQueue= Volley.newRequestQueue(processedInfo.this);
+//        requestQueue.add(stringRequest);
+//
+//    }
 
-        RequestQueue requestQueue= Volley.newRequestQueue(processedInfo.this);
-        requestQueue.add(stringRequest);
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

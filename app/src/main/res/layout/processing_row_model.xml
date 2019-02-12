@@ -13,10 +13,9 @@
         android:layout_columnWeight="1"
         android:layout_gravity="center"
         android:layout_rowWeight="1"
-        android:layout_margin="4dp"
+        android:layout_margin="8dp"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardElevation="2dp"
-        card_view:cardCornerRadius="20dp"
         card_view:cardBackgroundColor="@color/strokeColor">
 
         <RelativeLayout

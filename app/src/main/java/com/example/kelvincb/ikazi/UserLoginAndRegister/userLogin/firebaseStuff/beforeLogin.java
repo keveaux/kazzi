@@ -38,6 +38,8 @@ public class beforeLogin extends Fragment {
     EditText phone_no;
     Button next;
     ProgressBar progressBar;
+    public static String token = "";
+
 
 
     @Override
@@ -52,8 +54,7 @@ public class beforeLogin extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_before_login, container, false);
 
-        String token= FirebaseInstanceId.getInstance().getToken();
-//        Toast.makeText(getActivity(), ""+token, Toast.LENGTH_SHORT).show();
+        token= FirebaseInstanceId.getInstance().getToken();
 
         details=view.findViewById(R.id.detes);
         phone_no=view.findViewById(R.id.phonenumber);
@@ -62,7 +63,6 @@ public class beforeLogin extends Fragment {
         progressBar=view.findViewById(R.id.progressBarbeforeLogin);
 
 
-        Typeface font1 = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Bold.ttf");
 
 
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
@@ -162,6 +162,7 @@ public class beforeLogin extends Fragment {
                 Map<String,String> params=new HashMap<>();
                 String user_phone_no=phone_no.getText().toString();
                 params.put("phone",user_phone_no);
+                params.put("token",token);
 
                 return params;
             }

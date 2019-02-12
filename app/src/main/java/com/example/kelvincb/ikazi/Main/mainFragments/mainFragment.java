@@ -136,12 +136,15 @@ public class mainFragment extends Fragment {
                 //FILTER AS YOU TYPE
                 adapter.getFilter().filter(query);
                 if(adapter.getItemCount()==0){
-
-                    ImageView noworker = view.findViewById(R.id.noworker);
-                    noworker.setVisibility(View.VISIBLE);
+                    Toast.makeText(getContext(), ""+query, Toast.LENGTH_SHORT).show();
+//
+//                    ImageView noworker = view.findViewById(R.id.noworker);
+//                    noworker.setVisibility(View.VISIBLE);
                 }
                 return false;
             }
+
+
         });
 
 

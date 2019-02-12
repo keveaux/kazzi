@@ -49,7 +49,6 @@ public class userRegistrationFragment extends Fragment {
     TextView loginLink,signuptxt;
     Button signup;
     public static  EditText nameET,phoneET;
-    ProgressBar progressBar;
     ImageView user_profile_photo;
 
     public static final String UPLOAD_URL = "http://104.248.124.210/android/iKazi/phpFiles/sendRegistrationDetails.php";
@@ -67,12 +66,10 @@ public class userRegistrationFragment extends Fragment {
         view=inflater.inflate(R.layout.activity_user_registration, container, false);
 
         token= FirebaseInstanceId.getInstance().getToken();
-        Log.d("token",token);
-        Toast.makeText(getActivity(), ""+token, Toast.LENGTH_SHORT).show();
+
 
         user_profile_photo=view.findViewById(R.id.user_profile_photo2);
 
-        progressBar=view.findViewById(R.id.reg_progressBar);
 
         signuptxt=view.findViewById(R.id.signuptxt);
 

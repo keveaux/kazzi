@@ -3,7 +3,7 @@ package com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processedReque
 public class processedGetterSetters {
     String user_name,user_phone_number,mdate,mtime,
             jobDescription,landmark,workerId,worker_name,
-            occupation,imageUrl,worker_phone_number,daterequestsent,daterequesthandled,status;
+            occupation,imageUrl,worker_phone_number,daterequestsent,daterequesthandled,status,skillset;
 
     public String getUser_name() {
         return user_name;
@@ -61,6 +61,10 @@ public class processedGetterSetters {
         return status;
     }
 
+    public String getSkillset() {
+        return skillset;
+    }
+
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
@@ -115,5 +119,9 @@ public class processedGetterSetters {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setSkillset(String skillset) {
+        this.skillset = skillset;
     }
 }

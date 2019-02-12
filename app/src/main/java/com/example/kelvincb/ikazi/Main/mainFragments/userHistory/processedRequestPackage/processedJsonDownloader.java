@@ -71,6 +71,7 @@ public class processedJsonDownloader {
                                 String daterequestsent=jsonObject.getString("currentdate");
                                 String daterequesthandled=jsonObject.getString("daterequesthandled");
                                 String status=jsonObject.getString("status");
+                                String skillset=jsonObject.getString("skillSet");
 
 
 
@@ -91,6 +92,7 @@ public class processedJsonDownloader {
                                 GettersSetters.setDaterequestsent(daterequestsent);
                                 GettersSetters.setDaterequesthandled(daterequesthandled);
                                 GettersSetters.setStatus(status);
+                                GettersSetters.setSkillset(skillset);
 
 
                                 requestList.add(GettersSetters);

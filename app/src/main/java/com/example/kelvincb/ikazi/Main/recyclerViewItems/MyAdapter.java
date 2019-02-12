@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
         holder.nameTxt.setText(workers.get(position).getName());
         holder.img.setImageResource(workers.get(position).getImg());
 
-        Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
+        Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Bold.ttf");
         holder.nameTxt.setTypeface(font);
 
 

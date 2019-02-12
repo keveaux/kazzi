@@ -133,6 +133,7 @@
     <string name="processing">requests being processed will appear here</string>
     <string name="rejected">oops your request was rejected :(</string>
     <string name="fill">fill in the form to send your request</string>
+    <string name="accepted">your request was accepted</string>
 
 
 </resources>

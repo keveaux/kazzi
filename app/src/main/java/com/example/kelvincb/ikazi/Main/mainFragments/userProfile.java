@@ -78,9 +78,7 @@ public class userProfile extends Fragment {
     View view;
    public static EditText name,phone_no;
     Button update;
-    ProgressBar progressBar;
 
-    TextView myprofile;
 
     public static ImageView userImage;
 
@@ -126,19 +124,16 @@ public class userProfile extends Fragment {
         final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(getContext());
         fetchPhoneNumber.mynumber();
 
-        myprofile=view.findViewById(R.id.myProfile);
         name=view.findViewById(R.id.name_profile);
         phone_no=view.findViewById(R.id.phone_no_profile);
         update=view.findViewById(R.id.btn_update_profile);
-        progressBar=view.findViewById(R.id.progressBar_update);
         userImage = view.findViewById(R.id.user_profile_photo2);
 
 
         Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         logout.setTypeface(font1);
-        myprofile.setTypeface(font1);
 
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         phone_no.setTypeface(font);
         name.setTypeface(font);
         update.setTypeface(font);

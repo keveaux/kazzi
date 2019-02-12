@@ -63,7 +63,7 @@
             android:layout_below="@id/description"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:textSize="8sp"
             android:gravity="center"
             android:text="Painter"
@@ -92,7 +92,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/edittext_background"
@@ -108,7 +108,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/edittext_background"
@@ -148,7 +148,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/edittext_background"
@@ -167,7 +167,7 @@
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_below="@+id/landmarkET"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/mybutton"
             android:text="Request"
