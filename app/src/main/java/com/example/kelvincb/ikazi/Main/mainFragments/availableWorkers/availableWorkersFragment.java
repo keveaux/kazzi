@@ -102,7 +102,7 @@ public class availableWorkersFragment extends Fragment {
 
         locationtxt = view.findViewById(R.id.location);
 
-        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Bold.ttf");
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Bold.ttf");
         locationtxt.setTypeface(font);
 
         if (ActivityCompat.checkSelfPermission(getActivity(),

@@ -116,7 +116,7 @@
     <string name="start">GOT IT</string>
 
     <string name="slide_1_title">Hello Food!</string>
-    <string name="slide_1_desc">The easiest way to find a Worker!</string>
+    <string name="slide_1_desc">The convenient $ affordable way to get your things done!!</string>
 
     <string name="slide_2_title">Find a worker </string>
     <string name="slide_2_desc">Find a worker and choose when and where to meet!</string>
@@ -132,6 +132,7 @@
     <string name="noprocessed">your processed requests will appear here</string>
     <string name="processing">requests being processed will appear here</string>
     <string name="rejected">oops your request was rejected :(</string>
+    <string name="fill">fill in the form to send your request</string>
 
 
 </resources>

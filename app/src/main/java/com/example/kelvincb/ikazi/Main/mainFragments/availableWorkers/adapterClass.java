@@ -67,7 +67,7 @@ public class adapterClass extends BaseAdapter {
         ImageView image=convertView.findViewById(R.id.worker_image);
 //        Button book_worker_btn =convertView.findViewById(R.id.book_worker);
 
-        Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
         ratingtxt.setTypeface(font);
         distancetxt.setTypeface(font);
         nametxt.setTypeface(font);
@@ -77,7 +77,7 @@ public class adapterClass extends BaseAdapter {
 
         final getterSetterClass getterSetterClass= (getterSetterClass) this.getItem(position);
 
-        nametxt.setText(getterSetterClass.getName());
+        nametxt.setText(" "+getterSetterClass.getName());
         skill_set.setText(getterSetterClass.getSkillSet());
         int distance= (int) (getterSetterClass.getDistance() / 1000);
         distancetxt.setText(distance+" km away");
@@ -110,8 +110,12 @@ public class adapterClass extends BaseAdapter {
 
                 args.putString("id", getterSetterClass.getId());
                 args.putString("name",getterSetterClass.getName());
+                args.putString("skill",getterSetterClass.getSkillSet());
+                args.putString("occupation",getterSetterClass.getOccupation());
                 args.putString("location",getterSetterClass.getLocation());
                 args.putString("token",getterSetterClass.getToken());
+                args.putString("url",getterSetterClass.getImageUrl());
+
 
                 myFragment.setArguments(args);
 

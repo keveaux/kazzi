@@ -60,7 +60,7 @@ public class processingAdapterClass extends BaseAdapter{
         TextView date=convertView.findViewById(R.id.processing_date);
         ImageView image=convertView.findViewById(R.id.processing_worker_image);
 
-        Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
         occupation.setTypeface(font);
         status.setTypeface(font);
         nametxt.setTypeface(font);

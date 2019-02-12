@@ -34,7 +34,7 @@ import java.util.Map;
 public class beforeLogin extends Fragment {
 
     View view;
-    TextView details,appname,registerlink;
+    TextView details,registerlink;
     EditText phone_no;
     Button next;
     ProgressBar progressBar;
@@ -58,19 +58,17 @@ public class beforeLogin extends Fragment {
         details=view.findViewById(R.id.detes);
         phone_no=view.findViewById(R.id.phonenumber);
         next=view.findViewById(R.id.submit1);
-        appname=view.findViewById(R.id.appname);
         registerlink=view.findViewById(R.id.register_link);
         progressBar=view.findViewById(R.id.progressBarbeforeLogin);
 
 
-        Typeface font1 = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Bold.ttf");
+        Typeface font1 = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Bold.ttf");
 
 
-        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Light.ttf");
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
         details.setTypeface(font);
         phone_no.setTypeface(font);
         next.setTypeface(font);
-        appname.setTypeface(font1);
         registerlink.setTypeface(font);
 
 

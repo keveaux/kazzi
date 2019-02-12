@@ -70,7 +70,11 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".RequestRejected"></activity>
+        <activity android:name=".RequestRejected" />
+        <activity android:name=".trial">
+
+
+        </activity>
     </application>
 
 </manifest>

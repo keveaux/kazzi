@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -9,27 +10,32 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="100dp"
         android:layout_columnWeight="1"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:layout_rowWeight="1"
+        card_view:cardCornerRadius="20dp"
+        android:layout_margin="6dp"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardElevation="8dp"
+        app:cardElevation="2dp"
         card_view:cardBackgroundColor="@color/strokeColor">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingLeft="2dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
 
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/worker_image"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
                 android:padding="10dp"
                 android:src="@drawable/user"
+                android:textSize="10sp"
                 app:civ_border_color="#FFF"
                 app:civ_border_width="2dp" />
 
@@ -40,64 +46,62 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="110dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:text="NAME"
                 android:paddingLeft="4dp"
-                android:text="WORK"
+                android:textAllCaps="true"
                 android:textColor="@color/colorAccent"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignStart="@+id/nametxt"
-                android:layout_marginBottom="18dp"
-                android:text="date"
-                android:textColor="@color/colorAccent" />
-
-
-            <View
-                android:layout_width="262dp"
-                android:layout_height="1dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="53dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginStart="102dp"
-                android:layout_toRightOf="@+id/worker_image"
-                android:background="#1d1d1d"
-                />
+                android:layout_below="@+id/skill_set"
+                android:layout_marginTop="6dp"
+                android:drawableLeft="@drawable/ic_location_on"
+                android:drawablePadding="4dp"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:text="distance"
+                android:textSize="12sp" />
 
 
             <TextView
                 android:id="@+id/skill_set"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="4dp"
-                android:paddingLeft="4dp"
-                android:maxLines="1"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/nametxt"
                 android:layout_below="@+id/nametxt"
-                android:text="kevin muriithi" />
 
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:text="skill set"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
 
 
             <TextView
                 android:id="@+id/ratingtxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/nametxt"
-                android:layout_below="@+id/skill_set"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="4dp"
-                android:maxLines="1"
+                android:layout_alignBottom="@+id/distance"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/distance"
                 android:drawableLeft="@drawable/ic_star_black"
-                android:text="TextView" />
+                android:drawablePadding="4dp"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:text="TextView"
+                android:textSize="12sp" />
 
 
-                  </RelativeLayout>
+        </RelativeLayout>
 
 
     </android.support.v7.widget.CardView>

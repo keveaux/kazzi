@@ -27,10 +27,10 @@ public class myHistoryFragment extends Fragment {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private int[] tabIcons = {
-            R.drawable.inprocess,
-            R.drawable.processed,
-    };
+//    private int[] tabIcons = {
+//            R.drawable.inprocess,
+//            R.drawable.processed,
+//    };
 
     View view;
 
@@ -64,16 +64,17 @@ public class myHistoryFragment extends Fragment {
 
         TextView tabOne = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.custom_tab, null);
         tabOne.setText("PROCESSED");
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         tabOne.setTypeface(font);
-        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.processed, 0, 0);
+//        tabOne.setCompoundDrawablesWithIntrinsicBounds(R.drawable.processed, 0, 0, 0);
         tabLayout.getTabAt(0).setCustomView(tabOne);
+        tabLayout.setScrollBarSize((int) getActivity().getResources().getDimension(R.dimen.swipetabssize));
 
         TextView tabTwo = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.custom_tab, null);
         tabTwo.setText("PROCESSING");
-        Typeface font2=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font2=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         tabTwo.setTypeface(font2);
-        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.inprocess, 0, 0);
+//        tabTwo.setCompoundDrawablesWithIntrinsicBounds(R.drawable.inprocess, 0, 0, 0);
         tabLayout.getTabAt(1).setCustomView(tabTwo);
 
 

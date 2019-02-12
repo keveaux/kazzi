@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 public class userLogin extends Fragment {
 
     View view;
-    TextView appname,entercode,phonenumber,didnotgetcode,termsandconditions;
+    TextView entercode,phonenumber,didnotgetcode,termsandconditions;
     PinView pinView;
     Button mcontinue;
     ProgressBar progressBar;
@@ -76,7 +76,6 @@ public class userLogin extends Fragment {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_user_login, container, false);
 
-        appname=view.findViewById(R.id.appname);
         entercode=view.findViewById(R.id.entertxt);
         phonenumber=view.findViewById(R.id.phonenumberText);
         didnotgetcode=view.findViewById(R.id.didnotgetcode);
@@ -85,8 +84,7 @@ public class userLogin extends Fragment {
         mcontinue=view.findViewById(R.id.submit2);
         progressBar=view.findViewById(R.id.progressBar_login);
 
-        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Light.ttf");
-        appname.setTypeface(font);
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
         entercode.setTypeface(font);
         phonenumber.setTypeface(font);
         didnotgetcode.setTypeface(font);

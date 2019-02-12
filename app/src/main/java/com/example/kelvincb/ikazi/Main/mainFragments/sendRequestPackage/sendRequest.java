@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -32,6 +33,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.fetchPhoneNumber;
 import com.example.kelvincb.ikazi.fetchUserName;
+import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -47,12 +49,13 @@ public class sendRequest extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     EditText etDate,etTime,jobDesc, etlandmark;
+    ImageView workerImage;
     View view;
     Button sendRequest;
     Typeface font;
-    TextView fill_form;
+    TextView workerName,skillset,occupationTV;
     ProgressBar progressBar;
-    String user_name,user_phone_no,name,token;
+    String user_name,user_phone_no,name,skill,occupation,token,imageurl;
     String workerId ,location;
     private InterstitialAd mInterstitialAd;
     String formattedDate;
@@ -111,6 +114,7 @@ public class sendRequest extends Fragment {
             }
         });
 
+
     }
 
 
@@ -153,6 +157,9 @@ public class sendRequest extends Fragment {
         name=getArguments().getString("name");
         location=getArguments().getString("location");
         token=getArguments().getString("token");
+        imageurl=getArguments().getString("url");
+        skill=getArguments().getString("skill");
+        occupation=getArguments().getString("occupation");
 
 
         final Handler handler = new Handler();
@@ -170,15 +177,24 @@ public class sendRequest extends Fragment {
         jobDesc=view.findViewById(R.id.jobDescET);
         etlandmark =view.findViewById(R.id.landmarkET);
         sendRequest=view.findViewById(R.id.btn_send_request);
-        fill_form=view.findViewById(R.id.fill_form);
         progressBar=view.findViewById(R.id.send_request_progressBar);
+        workerImage=view.findViewById(R.id.worker_profile_image);
+        workerName=view.findViewById(R.id.workername);
+        skillset=view.findViewById(R.id.description);
+        occupationTV=view.findViewById(R.id.proffession);
 
 
-        Typeface myfont=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
-        fill_form.setTypeface(myfont);
-        fill_form.setText("Fill In Form To Send A Request To "+name);
+        PicassoClient.loadImage(imageurl,workerImage);
+        workerName.setText(name);
+        skillset.setText(skill);
+        occupationTV.setText(occupation);
 
-        font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Light.ttf");
+
+
+
+
+
+        font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
 
         jobDesc.setTypeface(font);
         etlandmark.setTypeface(font);
@@ -288,7 +304,7 @@ public class sendRequest extends Fragment {
         TextView text = dialog.findViewById(R.id.text_dialog);
         text.setText(msg);
 
-        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         text.setTypeface(font1);
 
         Button dialogButton =  dialog.findViewById(R.id.btn_dialog);

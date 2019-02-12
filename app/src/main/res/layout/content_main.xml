@@ -44,11 +44,14 @@
         />
 
     <android.support.v7.widget.SearchView
+        android:background="@drawable/edittext_background"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginTop="10dp"
         android:id="@+id/mSearch"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:defaultQueryHint="Search.."
+        android:layout_height="34dp"
+        app:defaultQueryHint="What are you looking for?"
         app:iconifiedByDefault="false"
         >
 
@@ -58,7 +61,10 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
         android:clipToPadding="false"
         android:focusable="false"
         android:nestedScrollingEnabled="false"

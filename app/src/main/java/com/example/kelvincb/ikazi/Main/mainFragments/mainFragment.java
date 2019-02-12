@@ -74,8 +74,12 @@ public class mainFragment extends Fragment {
 
         final TextView welcome=view.findViewById(R.id.welcometxt);
 
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         welcome.setTypeface(font);
+
+        Typeface myfont=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
+
+
 
 
         final Handler handler = new Handler();
@@ -99,12 +103,18 @@ public class mainFragment extends Fragment {
         rv =  view.findViewById(R.id.recycler_view);
         sv= view.findViewById(R.id.mSearch);
 
+        TextView searchText =
+                sv.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+
+        searchText.setTypeface(myfont);
+        searchText.setTextSize(getResources().getDimension(R.dimen.textsize));
+
         //SET ITS PROPETRIES
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setItemAnimator(new DefaultItemAnimator());
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 3);
         rv.setLayoutManager(mLayoutManager);
-        rv.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        rv.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(2), true));
         rv.setItemAnimator(new DefaultItemAnimator());
 
         //ADAPTER
@@ -157,22 +167,51 @@ public class mainFragment extends Fragment {
 
         p=new Worker();
         p.setName("Plumber");
-        p.setImg(R.drawable.plumber2);
+        p.setImg(R.drawable.plumber);
         workers.add(p);
 
         p=new Worker();
         p.setName("Wifi Installer");
-        p.setImg(R.drawable.wifi);
+        p.setImg(R.drawable.phonerepair);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Electrician");
+        p.setImg(R.drawable.electrician);
         workers.add(p);
 
         p=new Worker();
         p.setName("Electronics Repair");
-        p.setImg(R.drawable.eletronicsrepair);
+        p.setImg(R.drawable.electrician);
+        workers.add(p);
+
+        p.setName("Phone Repair");
+        p.setImg(R.drawable.phonerepair);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Painter");
+        p.setImg(R.drawable.painter);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Plumber");
+        p.setImg(R.drawable.plumber);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Wifi Installer");
+        p.setImg(R.drawable.phonerepair);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Electrician");
+        p.setImg(R.drawable.electrician);
         workers.add(p);
 
         p=new Worker();
         p.setName("Electronics Repair");
-        p.setImg(R.drawable.eletronicsrepair);
+        p.setImg(R.drawable.electrician);
         workers.add(p);
 
         return workers;

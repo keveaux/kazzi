@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#1FD5AD"
+
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/worker_profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:elevation="4dp"
+            android:src="@drawable/success" />
+
+        <TextView
+            android:id="@+id/workername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/worker_profile_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="Kevin Muriithi"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/workername"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:text="can do almost any task"
+            android:textColor="#363636" />
+
+        <TextView
+            android:id="@+id/proffession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="8sp"
+            android:gravity="center"
+            android:text="Painter"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative">
+
+      <TextView
+          android:id="@+id/acceptedTV"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="acepted"
+          android:textColor="#363636"
+          android:layout_centerInParent="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="10dp"
+          android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/acceptedTV"
+            android:text="Date of task :"
+            android:layout_marginTop="30dp"
+            android:textColor="#363636"
+            android:textSize="12sp"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dateTV"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/dateTV"
+            android:textSize="12sp"
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="date"/>
+        <TextView
+            android:id="@+id/timeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateTV"
+            android:layout_alignStart="@+id/dateTV"
+            android:textSize="12dp"
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="Time:" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/timeTV"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/timeTV"
+            android:textSize="12sp"
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="time"/>
+
+        <TextView
+            android:id="@+id/descriptionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeTV"
+            android:layout_alignStart="@+id/timeTV"
+            android:textSize="12dp"
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="Description:" />
+
+        <TextView
+            android:id="@+id/jobdescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/descriptionTV"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/descriptionTV"
+            android:textSize="12sp"
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="description"/>
+
+        <Button
+            android:id="@+id/btn_send_request"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/descriptionTV"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/mybutton"
+            android:text="Report an issue"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <Button
+            android:id="@+id/tastcomplete"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btn_send_request"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/mybutton"
+            android:text="Task Complete ?"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#fff"
+        android:clickable="true"
+        android:src="@drawable/phone"
+        android:layout_marginBottom="10dp"
+        app:borderWidth="3dp"
+        app:backgroundTint="@color/colorPrimary"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -17,6 +17,7 @@ import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processingReque
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.RequestRejected;
 import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
+import com.example.kelvincb.ikazi.trial;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,7 @@ public class processedAdapterClass extends BaseAdapter {
         ImageView image=convertView.findViewById(R.id.processed_worker_image);
         TextView status=convertView.findViewById(R.id.processed_status);
 
-        Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
         occupation.setTypeface(font);
         nametxt.setTypeface(font);
         processeddate.setTypeface(font);
@@ -78,7 +79,7 @@ public class processedAdapterClass extends BaseAdapter {
 
 
         if(getterSetterClass.getStatus().equals("0")){
-            status.setText(" REJECTED ");
+            status.setText("REJECTED ");
             status.setTextColor(Color.parseColor("#FFFFFF"));
             status.setBackgroundResource(R.drawable.rounde_edges_denied);
 
@@ -94,7 +95,7 @@ public class processedAdapterClass extends BaseAdapter {
 
 
         }else {
-            status.setText(" ACCEPTED ");
+            status.setText("ACCEPTED ");
             status.setBackgroundResource(R.drawable.rounded_edges_accepted);
             status.setTextColor(Color.parseColor("#FFFFFF"));
 
@@ -120,7 +121,7 @@ public class processedAdapterClass extends BaseAdapter {
                     sendData.putString("worker_pno",worker_pno);
                     sendData.putString("workerId",workerId);
 
-                    Intent intent=new Intent(c,processedInfo.class);
+                    Intent intent=new Intent(c,trial.class);
                     intent.putExtras(sendData);
                     c.startActivity(intent);
 

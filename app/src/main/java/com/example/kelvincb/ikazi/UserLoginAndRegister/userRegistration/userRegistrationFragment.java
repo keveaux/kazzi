@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class userRegistrationFragment extends Fragment {
 
     }
     View view;
-    TextView loginLink,appname,signuptxt;
+    TextView loginLink,signuptxt;
     Button signup;
     public static  EditText nameET,phoneET;
     ProgressBar progressBar;
@@ -66,12 +67,13 @@ public class userRegistrationFragment extends Fragment {
         view=inflater.inflate(R.layout.activity_user_registration, container, false);
 
         token= FirebaseInstanceId.getInstance().getToken();
+        Log.d("token",token);
+        Toast.makeText(getActivity(), ""+token, Toast.LENGTH_SHORT).show();
 
         user_profile_photo=view.findViewById(R.id.user_profile_photo2);
 
         progressBar=view.findViewById(R.id.reg_progressBar);
 
-        appname=view.findViewById(R.id.appname);
         signuptxt=view.findViewById(R.id.signuptxt);
 
         nameET=view.findViewById(R.id.input_name_reg);
@@ -81,11 +83,9 @@ public class userRegistrationFragment extends Fragment {
 
         signup=view.findViewById(R.id.btn_signup);
 
-        Typeface font1 = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Bold.ttf");
 
 
-        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "RobotoSlab-Light.ttf");
-        appname.setTypeface(font1);
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Light.ttf");
         signuptxt.setTypeface(font);
         nameET.setTypeface(font);
         phoneET.setTypeface(font);

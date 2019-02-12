@@ -60,7 +60,7 @@ public class processedInfo extends AppCompatActivity {
         FloatingActionButton fab=findViewById(R.id.fab);
 
 
-        Typeface myfont=Typeface.createFromAsset(getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface myfont=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
         nametv.setTypeface(myfont);
         occupationtextview.setTypeface(myfont);
         datetextview.setTypeface(myfont);
@@ -68,7 +68,7 @@ public class processedInfo extends AppCompatActivity {
         jobdesctv.setTypeface(myfont);
 
 
-        Typeface font=Typeface.createFromAsset(getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
         worker_name.setTypeface(font);
         occupationTV.setTypeface(font);
         timeTV.setTypeface(font);

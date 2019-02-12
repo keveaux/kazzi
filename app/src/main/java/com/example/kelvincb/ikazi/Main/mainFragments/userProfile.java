@@ -134,11 +134,11 @@ public class userProfile extends Fragment {
         userImage = view.findViewById(R.id.user_profile_photo2);
 
 
-        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         logout.setTypeface(font1);
         myprofile.setTypeface(font1);
 
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
         phone_no.setTypeface(font);
         name.setTypeface(font);
         update.setTypeface(font);
