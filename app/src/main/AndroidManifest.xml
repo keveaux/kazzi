@@ -25,6 +25,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:windowSoftInputMode="adjustPan"
         android:theme="@style/MyMaterialTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -71,10 +72,9 @@
         </service>
 
         <activity android:name=".RequestRejected" />
-        <activity android:name=".trial">
-
-
-        </activity>
+        <activity android:name=".trial" />
+        <activity android:name=".Main.mainFragments.availableWorkers.AvailableWorkers" />
+        <activity android:name=".Main.mainFragments.sendRequestPackage.sendRequestActivity"></activity>
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ public class JsonDownloader {
         this.c = c;
     }
 
-    public void retrieveWorkerInfo(final String streetName, final String URL, final ListView listView, final ProgressBar myProgressBar, final ImageView imv, final TextView tv, final Double mlongitude, final Double mlatitude) {
+    public void retrieveWorkerInfo(final String streetName, final String URL, final ListView listView, final ProgressBar myProgressBar,  final TextView tv, final Double mlongitude, final Double mlatitude) {
 
         final ArrayList<getterSetterClass> workerList = new ArrayList<>();
 
@@ -55,7 +55,6 @@ public class JsonDownloader {
 
                         if(response.isNull("results")){
                             myProgressBar.setVisibility(View.GONE);
-                            imv.setVisibility(View.VISIBLE);
                             tv.setVisibility(View.VISIBLE);
 
                         }
@@ -117,12 +116,10 @@ public class JsonDownloader {
 
                                 if (distance<15000){
                                     workerList.add(GettersSetters);
-                                    imv.setVisibility(View.GONE);
 
                                 }
                                 else {
 
-                                    imv.setVisibility(View.VISIBLE);
                                     tv.setVisibility(View.VISIBLE);
                                 }
 

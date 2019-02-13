@@ -1,6 +1,7 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest;
+import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequestActivity;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
 
@@ -103,24 +105,36 @@ public class adapterClass extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                sendRequest myFragment = new sendRequest();
+//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//                sendRequest myFragment = new sendRequest();
+//
+//                Bundle args = new Bundle();
+//
+//                args.putString("id", getterSetterClass.getId());
+//                args.putString("name",getterSetterClass.getName());
+//                args.putString("skill",getterSetterClass.getSkillSet());
+//                args.putString("occupation",getterSetterClass.getOccupation());
+//                args.putString("location",getterSetterClass.getLocation());
+//                args.putString("token",getterSetterClass.getToken());
+//                args.putString("url",getterSetterClass.getImageUrl());
+//
+//
+//                myFragment.setArguments(args);
+//
+//                activity.getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
 
-                Bundle args = new Bundle();
+                Intent i=new Intent(c,sendRequestActivity.class);
+                i.putExtra("EXTRA","first");
+                i.putExtra("id",getterSetterClass.getId());
+                i.putExtra("name",getterSetterClass.getName());
+                i.putExtra("skill",getterSetterClass.getSkillSet());
+                i.putExtra("occupation",getterSetterClass.getOccupation());
+                i.putExtra("location",getterSetterClass.getLocation());
+                i.putExtra("token",getterSetterClass.getToken());
+                i.putExtra("url",getterSetterClass.getImageUrl());
 
-                args.putString("id", getterSetterClass.getId());
-                args.putString("name",getterSetterClass.getName());
-                args.putString("skill",getterSetterClass.getSkillSet());
-                args.putString("occupation",getterSetterClass.getOccupation());
-                args.putString("location",getterSetterClass.getLocation());
-                args.putString("token",getterSetterClass.getToken());
-                args.putString("url",getterSetterClass.getImageUrl());
-
-
-                myFragment.setArguments(args);
-
-                activity.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
+                c.startActivity(i);
 
 
             }

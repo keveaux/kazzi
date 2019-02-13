@@ -32,7 +32,7 @@
     <string name="action_play_next">Play Next</string>
     <string name="backdrop_title">LOVE MUSICS</string>
     <string name="backdrop_subtitle">This season top 20 music</string>
-    <string name="noworker">\t\t\t........OOOPS!! \n NO WORKER NEAR YOU :( </string>
+    <string name="noworker">OOOPS!! NO WORKER NEAR YOU :( </string>
 
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>

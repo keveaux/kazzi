@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -15,10 +16,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
@@ -54,7 +57,7 @@ import static com.example.kelvincb.ikazi.UserLoginAndRegister.userRegistration.u
 
 public class MainActivity extends AppCompatActivity {
 
-    AdView mAdView;
+//    AdView mAdView;
     Fragment fragment;
     BottomNavigationView navigation;
 
@@ -62,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
     boolean isBackPressed  = false;
 
     Bitmap bitmap;
+    Toolbar toolbar;
+
+//    TextView title;
+
 
 
     @Override
@@ -69,14 +76,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar=findViewById(R.id.main_toolbar);
 
+        setSupportActionBar(toolbar);
 
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        title=findViewById(R.id.title_main);
+//        Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
+//        title.setTypeface(font);
+
+//        MobileAds.initialize(this,
+//                "ca-app-pub-3940256099942544~3347511713");
+
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
 
         navigation =  findViewById(R.id.navigation);
@@ -86,20 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch (getIntent().getStringExtra("EXTRA")) {
 
-            case "openAvailableWorkers":
-            String latitude = getIntent().getStringExtra("lat");
-            String longitude = getIntent().getStringExtra("lon");
-            String occupation=getIntent().getStringExtra("occupation");
-            Bundle bundle = new Bundle();
-            bundle.putString("EXTRA","second");
-            bundle.putString("lat", latitude);
-            bundle.putString("lon", longitude);
-            bundle.putString("occupation",occupation);
-            availableWorkersFragment ob = new availableWorkersFragment();
-            ob.setArguments(bundle);
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, ob)
-                    .addToBackStack(null).commit();
-                break;
                 default:
             fragment = new mainFragment();
             loadFragment(fragment);

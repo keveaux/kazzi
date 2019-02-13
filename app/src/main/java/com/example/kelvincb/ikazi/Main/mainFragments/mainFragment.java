@@ -97,7 +97,7 @@ public class mainFragment extends Fragment {
 
 
             }
-        }, 1000);
+        }, 2000);
 
 
         rv =  view.findViewById(R.id.recycler_view);

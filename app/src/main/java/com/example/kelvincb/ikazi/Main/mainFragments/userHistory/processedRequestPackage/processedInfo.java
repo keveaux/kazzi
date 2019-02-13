@@ -44,8 +44,7 @@ public class processedInfo extends AppCompatActivity {
    private String workerId,rating,name;
     ImageView workerImage;
     Toolbar toolbar;
-//    RatingBar mRatingBar;
-
+    RatingBar ratingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,62 +129,21 @@ public class processedInfo extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            //Do something here if data  received
-        }
-        else
-        {
-            //Do something here if data not received
         }
 
 
-//         mRatingBar =  findViewById(R.id.ratingBar);
 
-//        final TextView mRatingScale =  findViewById(R.id.tvRatingScale);
 
-//        mRatingScale.setText("Please rate "+worker_name.getText().toString());
 
         Button mSendFeedback =  findViewById(R.id.btnSubmit);
 
-//        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//            @Override
-//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-//                mRatingScale.setText(String.valueOf(v));
-//                switch ((int) ratingBar.getRating()) {
-//                    case 1:
-//                        mRatingScale.setText("Very bad");
-//                        break;
-//                    case 2:
-//                        mRatingScale.setText("Need some improvement");
-//                        break;
-//                    case 3:
-//                        mRatingScale.setText("Good");
-//                        break;
-//                    case 4:
-//                        mRatingScale.setText("Great");
-//                        break;
-//                    case 5:
-//                        mRatingScale.setText("Awesome. I love it");
-//                        break;
-//                    default:
-//                        mRatingScale.setText("Please rate "+worker_name.getText().toString());
-//                }
-//            }
-//        });
-//
+
         mSendFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showDialog(processedInfo.this,"please rate "+name);
-//                if (mRatingBar.getRating()==0) {
-//                    Toast.makeText(processedInfo.this, "Please fill in the rating", Toast.LENGTH_LONG).show();
-//                } else {
-//                    rating= String.valueOf(mRatingBar.getRating());
-//                    sendData();
-//                    Toast.makeText(processedInfo.this, ""+mRatingBar.getRating(), Toast.LENGTH_SHORT).show();
-//                    mRatingBar.setRating(0);
-//
-//                }
+
             }
         });
 
@@ -212,23 +170,64 @@ public class processedInfo extends AppCompatActivity {
     public void showDialog(Activity activity, String msg){
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
         dialog.setContentView(R.layout.ratingdialog);
 
 
 
-        TextView text = dialog.findViewById(R.id.text_dialog);
+        final TextView text = dialog.findViewById(R.id.text_dialog);
         text.setText(msg);
 
         Typeface font1=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
         text.setTypeface(font1);
+
+         ratingBar=dialog.findViewById(R.id.ratingBar);
+
+                ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                text.setText(String.valueOf(v));
+                switch ((int) ratingBar.getRating()) {
+                    case 1:
+                        text.setText("Very bad");
+                        break;
+                    case 2:
+                        text.setText("Need some improvement");
+                        break;
+                    case 3:
+                        text.setText("Good");
+                        break;
+                    case 4:
+                        text.setText("Great");
+                        break;
+                    case 5:
+                        text.setText("Awesome. I love it");
+                        break;
+                    default:
+                        text.setText("Please rate "+worker_name.getText().toString());
+                }
+            }
+        });
+
+
 
         Button dialogButton =  dialog.findViewById(R.id.btn_dialog);
         dialogButton.setTypeface(font1);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+
+
+                if (ratingBar.getRating()==0) {
+                    Toast.makeText(processedInfo.this, "Please fill in the rating", Toast.LENGTH_LONG).show();
+                } else {
+                    rating= String.valueOf(ratingBar.getRating());
+                    sendData();
+                    Toast.makeText(processedInfo.this, ""+ratingBar.getRating(), Toast.LENGTH_SHORT).show();
+                    ratingBar.setRating(0);
+                    dialog.dismiss();
+
+                }
 
             }
         });
@@ -237,8 +236,6 @@ public class processedInfo extends AppCompatActivity {
             @Override
             public void onDismiss(DialogInterface dialog) {
 
-
-
             }
         });
 
@@ -246,44 +243,43 @@ public class processedInfo extends AppCompatActivity {
 
     }
 
-//    private void sendData() {
+    private void sendData() {
 //        progressBar.setVisibility(View.VISIBLE);
-//        String MyURL="http://104.248.124.210/android/iKazi/phpFiles/sendRating.php";
-//        StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
+        String MyURL="http://104.248.124.210/android/iKazi/phpFiles/sendRating.php";
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
 //                progressBar.setVisibility(View.GONE);
-//
-//                if(response.equals("successful")){
-//                    Toast.makeText(processedInfo.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
-//                }
-//                Toast.makeText(processedInfo.this, response, Toast.LENGTH_SHORT).show();
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(processedInfo.this,error+"",Toast.LENGTH_LONG).show();
-//
-//
-//            }
-//        }){
-//
-//            @Override
-//            protected Map<String,String> getParams() throws AuthFailureError {
-//                Map<String,String> params=new HashMap<>();
-//                params.put("workerId",workerId);
-//                params.put("rating", rating);
-//
-//                return params;
-//            }
-//
-//        };
-//
-//        RequestQueue requestQueue= Volley.newRequestQueue(processedInfo.this);
-//        requestQueue.add(stringRequest);
-//
-//    }
+
+                if(response.equals("successful")){
+                    Toast.makeText(processedInfo.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(processedInfo.this,error+"",Toast.LENGTH_LONG).show();
+
+
+            }
+        }){
+
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> params=new HashMap<>();
+                params.put("workerId",workerId);
+                params.put("rating", rating);
+
+                return params;
+            }
+
+        };
+
+        RequestQueue requestQueue= Volley.newRequestQueue(processedInfo.this);
+        requestQueue.add(stringRequest);
+
+    }
 
 
     @Override

@@ -62,7 +62,7 @@ public class availableWorkersFragment extends Fragment {
 
     private final static int ALL_PERMISSIONS_RESULT = 101;
     LocationTrack locationTrack;
-     NoInternet noInternet ;
+    NoInternet noInternet ;
     String streetName;
 
 
@@ -235,9 +235,6 @@ public class availableWorkersFragment extends Fragment {
                     if (!isConnected(getActivity())) {
 
 
-                        ImageView noworker = view.findViewById(R.id.noworker);
-                        noworker.setVisibility(View.VISIBLE);
-
                         TextView noworkertxt = view.findViewById(R.id.noworkertxt);
                         noworkertxt.setVisibility(View.VISIBLE);
                         noworkertxt.setText("TURN ON YOUR INTERNET CONNECTION");
@@ -248,8 +245,6 @@ public class availableWorkersFragment extends Fragment {
                         final ListView lv = view.findViewById(R.id.myListView);
 
 
-                        final ImageView noworker = view.findViewById(R.id.noworker);
-
                         final TextView noworkertxt = view.findViewById(R.id.noworkertxt);
 
 
@@ -259,7 +254,7 @@ public class availableWorkersFragment extends Fragment {
                         if (mlatitude == 0.0) {
                             locationtxt.setText("cannot find location \n press button below to set location");
                         } else {
-                            new JsonDownloader(getActivity()).retrieveWorkerInfo(streetName,SITE_URL, lv, myProgressBar, noworker, noworkertxt, mlongitude, mlatitude);
+                            new JsonDownloader(getActivity()).retrieveWorkerInfo(streetName,SITE_URL, lv, myProgressBar, noworkertxt, mlongitude, mlatitude);
                         }
 
                     }}

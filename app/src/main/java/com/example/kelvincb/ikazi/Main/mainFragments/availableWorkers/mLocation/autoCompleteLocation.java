@@ -1,13 +1,11 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.mLocation;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.kelvincb.ikazi.Main.MainActivity;
-import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
+import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.AvailableWorkers;
 import com.example.kelvincb.ikazi.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -50,7 +48,7 @@ public class autoCompleteLocation extends AppCompatActivity implements PlaceSele
         mylon = mylon.substring(0, mylon.indexOf(")"));
 
 
-        Intent i=new Intent(getApplicationContext(),MainActivity.class);
+        Intent i=new Intent(getApplicationContext(),AvailableWorkers.class);
         i.putExtra("EXTRA","openAvailableWorkers");
         i.putExtra("occupation",occupation);
         i.putExtra("lat",mylat);

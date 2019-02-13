@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,7 +54,7 @@ public class sendRequest extends Fragment {
     View view;
     Button sendRequest;
     Typeface font;
-    TextView workerName,skillset,occupationTV;
+    TextView workerName,skillset,occupationTV,fill;
     ProgressBar progressBar;
     String user_name,user_phone_no,name,skill,occupation,token,imageurl;
     String workerId ,location;
@@ -130,6 +131,7 @@ public class sendRequest extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_send_request, container, false);
 
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 
         mInterstitialAd = new InterstitialAd(getActivity());
@@ -152,14 +154,15 @@ public class sendRequest extends Fragment {
         fetchUserName.fetchname();
 
 
-        workerId= getArguments().getString("id");
 
+        workerId= getArguments().getString("id");
         name=getArguments().getString("name");
         location=getArguments().getString("location");
         token=getArguments().getString("token");
         imageurl=getArguments().getString("url");
         skill=getArguments().getString("skill");
         occupation=getArguments().getString("occupation");
+
 
 
         final Handler handler = new Handler();
@@ -182,6 +185,7 @@ public class sendRequest extends Fragment {
         workerName=view.findViewById(R.id.workername);
         skillset=view.findViewById(R.id.description);
         occupationTV=view.findViewById(R.id.proffession);
+        fill=view.findViewById(R.id.fill);
 
 
         PicassoClient.loadImage(imageurl,workerImage);
@@ -192,13 +196,18 @@ public class sendRequest extends Fragment {
 
 
 
+        Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
+        workerName.setTypeface(boldfont);
+        sendRequest.setTypeface(boldfont);
 
 
         font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
 
         jobDesc.setTypeface(font);
         etlandmark.setTypeface(font);
-        sendRequest.setTypeface(font);
+        fill.setTypeface(font);
+        skillset.setTypeface(font);
+        occupationTV.setTypeface(font);
 
         sendRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -354,6 +363,8 @@ public class sendRequest extends Fragment {
         dialog.show();
 
     }
+
+
 
 
     public interface OnFragmentInteractionListener {

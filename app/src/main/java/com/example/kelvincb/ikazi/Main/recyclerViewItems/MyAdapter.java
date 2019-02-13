@@ -2,9 +2,8 @@ package com.example.kelvincb.ikazi.Main.recyclerViewItems;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 
-import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
+import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.AvailableWorkers;
 import com.example.kelvincb.ikazi.R;
 
 import java.util.ArrayList;
@@ -57,17 +56,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                availableWorkersFragment myFragment = new availableWorkersFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
-//                Toast.makeText(mContext, ""+workers.getName(), Toast.LENGTH_SHORT).show();
 
-                Bundle bundle = new Bundle();
-                bundle.putString( "occupation", workers.get(position).getName());
-                bundle.putString("EXTRA","first");
-                // set Fragmentclass Arguments
-                myFragment.setArguments(bundle);            }
+
+                Intent i=new Intent(c,AvailableWorkers.class);
+                i.putExtra("EXTRA","first");
+                i.putExtra("occupation",workers.get(position).getName());
+
+                c.startActivity(i);
+   }
         });
+
+
 
     }
 

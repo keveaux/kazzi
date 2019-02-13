@@ -20,7 +20,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_arrow_back" />
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:theme="@style/ToolBarStyle"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/worker_profile_image"
@@ -206,7 +207,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="#fff"
+        android:backgroundTint="@color/colorPrimary"
         android:clickable="true"
         android:src="@drawable/phone"
         android:layout_marginBottom="10dp"

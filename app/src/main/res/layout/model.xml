@@ -29,7 +29,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#80112233">
+                    android:background="#80000000">
 
                 </RelativeLayout>
 
