@@ -46,7 +46,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif"
             android:text="New here?"
-            android:textColor="#1FD5AD"
+            android:textColor="@color/colorPrimary"
             />
 
 
@@ -155,14 +155,9 @@
             android:layout_marginTop="10dp"
             android:layout_below="@+id/textView5"
             android:textSize="20dip"
-            android:textColor="#1FD5AD"
+            android:textColor="@color/colorPrimary"
             android:fontFamily="sans-serif"
             android:text="Login" />
-
-
-
-
-
 
 
     </RelativeLayout>

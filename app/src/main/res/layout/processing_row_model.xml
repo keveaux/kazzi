@@ -13,7 +13,7 @@
         android:layout_columnWeight="1"
         android:layout_gravity="center"
         android:layout_rowWeight="1"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardElevation="2dp"
         card_view:cardBackgroundColor="@color/strokeColor">
@@ -61,9 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/processing_nametxt"
                 android:layout_alignBottom="@+id/processing_nametxt"
-                android:layout_alignParentRight="true"
-                android:paddingLeft="10dp"
-                android:textSize="12dp"
+                android:layout_alignParentEnd="true"
+                android:paddingStart="10dp"
+                android:textSize="12sp"
                 android:drawablePadding="4dp"
                 android:drawableLeft="@drawable/ic_work"
                 android:text="occupation"/>
@@ -74,11 +74,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/processing_nametxt"
                 android:layout_alignStart="@+id/processing_nametxt"
-                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:textSize="12dp"
                 android:drawablePadding="4dp"
-                android:drawableStart="@drawable/ic_calendar"
+                android:drawableLeft="@drawable/ic_calendar"
                 android:text="date" />
 
             <TextView
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:paddingEnd="2dp"
+                android:paddingRight="2dp"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp"
                 android:text="status"
@@ -94,7 +94,7 @@
                 android:textSize="12sp"
                 android:layout_alignBottom="@+id/processing_date"
                 android:layout_toEndOf="@id/processing_date"
-                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
                 android:layout_marginStart="20dp"
                 />
 

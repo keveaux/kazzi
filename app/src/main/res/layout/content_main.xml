@@ -52,6 +52,7 @@
         android:layout_height="34dp"
         app:defaultQueryHint="What are you looking for?"
         app:iconifiedByDefault="false"
+
         >
 
     </android.support.v7.widget.SearchView>

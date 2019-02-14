@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ import android.widget.Toast;
 import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.mainFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.myHistoryFragment;
+import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.processedRequestPackage.processedAdapterClass;
 import com.example.kelvincb.ikazi.Main.mainFragments.userProfile;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.LoginRegisterActivity;
@@ -44,6 +47,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.Objects;
+
+import q.rorbin.badgeview.QBadgeView;
 
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.UPDATE_URL;
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.name;
@@ -95,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         navigation =  findViewById(R.id.navigation);
+
+        BottomNavigationMenuView bottomNavigationMenuView =
+                (BottomNavigationMenuView) navigation.getChildAt(0);
+        View v = bottomNavigationMenuView.getChildAt(1); // number of menu from left
+        new QBadgeView(this).bindTarget(v).setBadgeNumber(1);
+
         navigation.getMenu().getItem(0).setChecked(true);
 
         setBottomNavigationView();
