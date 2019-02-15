@@ -69,11 +69,17 @@ public class adapterClass extends BaseAdapter {
         ImageView image=convertView.findViewById(R.id.worker_image);
 //        Button book_worker_btn =convertView.findViewById(R.id.book_worker);
 
+
+
+        Typeface bold_font=Typeface.createFromAsset(c.getAssets(),"Roboto-Bold.ttf");
+        ratingtxt.setTypeface(bold_font);
+        distancetxt.setTypeface(bold_font);
+        skill_set.setTypeface(bold_font);
+
+
         Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
-        ratingtxt.setTypeface(font);
-        distancetxt.setTypeface(font);
+
         nametxt.setTypeface(font);
-        skill_set.setTypeface(font);
 
 
 

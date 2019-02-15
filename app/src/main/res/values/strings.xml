@@ -129,11 +129,12 @@
     <string name="play_again">Play Again</string>
     <string name="chooseloc">Press search to choose your location</string>
     <string name="title_activity_trial">Main2tActivity</string>
-    <string name="noprocessed">your processed requests will appear here</string>
-    <string name="processing">requests being processed will appear here</string>
+    <string name="noprocessed">Your processed requests will appear here</string>
+    <string name="processing">Requests being processed will appear here</string>
     <string name="rejected">oops your request was rejected :(</string>
-    <string name="fill">fill in the form to send your request</string>
-    <string name="accepted">your request was accepted</string>
+    <string name="fill">Fill in the form to send your request</string>
+    <string name="accepted">Your request was accepted</string>
+    <string name="fetching_your_location">Fetching Your Location...</string>
 
 
 </resources>

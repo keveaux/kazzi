@@ -50,7 +50,7 @@
                 android:text="NAME"
                 android:paddingLeft="4dp"
                 android:textAllCaps="true"
-                android:textColor="@color/colorAccent"
+                android:textColor="#000"
                 android:textSize="16sp" />
 
             <TextView
@@ -63,6 +63,7 @@
                 android:drawableLeft="@drawable/ic_location_on"
                 android:drawablePadding="4dp"
                 android:maxLines="1"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingLeft="4dp"
                 android:text="distance"
                 android:textSize="12sp" />
@@ -79,7 +80,7 @@
                 android:maxLines="1"
                 android:paddingLeft="4dp"
                 android:text="skill set"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="#000"
                 android:textSize="12sp" />
 
 
@@ -95,6 +96,7 @@
                 android:drawablePadding="4dp"
                 android:maxLines="1"
                 android:paddingLeft="4dp"
+                android:textColor="@color/duskYellow"
                 android:text="TextView"
                 android:textSize="12sp" />
 

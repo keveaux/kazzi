@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF07624E</color>
-    <color name="colorPrimaryDark">#FF07624E</color>
+    <color name="colorPrimary">#1FD5AD</color>
+    <color name="colorPrimaryDark">#00a37e</color>
     <color name="colorAccent">#212121</color>
     <color name="bgBottomNavigation">#d1395c</color>
-    <color name="duskYellow">#f5f90e</color>
+    <color name="duskYellow">#FFC107</color>
     <color name="lightGrey">#020005</color>
 
     <!-- Screens background color-->

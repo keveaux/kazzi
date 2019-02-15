@@ -9,18 +9,16 @@
     tools:context=".Main.mainFragments.availableWorkers.availableWorkersFragment">
 
 
-
-
-
-
         <TextView
             android:id="@+id/location"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:text="Fetching Your Location..."
+            android:gravity="start"
+            android:drawablePadding="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/fetching_your_location"
+            android:drawableStart="@drawable/ic_location_on"
             android:textColor="#000000"
             android:background="#fff"
             />

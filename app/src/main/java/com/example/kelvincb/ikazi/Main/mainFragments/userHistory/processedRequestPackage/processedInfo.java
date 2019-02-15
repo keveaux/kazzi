@@ -40,7 +40,7 @@ import java.util.Map;
 
 public class processedInfo extends AppCompatActivity {
 
-   private TextView worker_name,  timeTV, dateTV, jobDescriptionTV,occupationtextview,datetextview,timetextview,jobdesctv,TVskillset;
+   private TextView worker_name, acceptedTV, timeTV, dateTV, jobDescriptionTV,occupationtextview,datetextview,timetextview,jobdesctv,TVskillset;
    private String workerId,rating,name;
     ImageView workerImage;
     Toolbar toolbar;
@@ -59,10 +59,10 @@ public class processedInfo extends AppCompatActivity {
         timeTV = findViewById(R.id.time);
         dateTV = findViewById(R.id.date);
         jobDescriptionTV = findViewById(R.id.jobDescription);
-//        progressBar=findViewById(R.id.feedback_progressBar);
         workerImage=findViewById(R.id.worker_profile_image);
         TVskillset=findViewById(R.id.description);
         toolbar=findViewById(R.id.toolbar);
+        acceptedTV=findViewById(R.id.acceptedTV);
 
         setSupportActionBar(toolbar);
 
@@ -82,11 +82,13 @@ public class processedInfo extends AppCompatActivity {
         FloatingActionButton fab=findViewById(R.id.fab);
 
 
-        Typeface myfont=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
-        occupationtextview.setTypeface(myfont);
-        datetextview.setTypeface(myfont);
-        timetextview.setTypeface(myfont);
-        jobdesctv.setTypeface(myfont);
+        Typeface boldfont=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
+        occupationtextview.setTypeface(boldfont);
+        datetextview.setTypeface(boldfont);
+        timetextview.setTypeface(boldfont);
+        jobdesctv.setTypeface(boldfont);
+        TVskillset.setTypeface(boldfont);
+        acceptedTV.setTypeface(boldfont);
 
 
         Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");

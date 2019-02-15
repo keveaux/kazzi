@@ -12,24 +12,18 @@
     android:focusableInTouchMode="true"
     android:id="@+id/root_layout">
 
-    <RelativeLayout
-        android:layout_above="@id/recycler_view"
-        android:background="@color/colorPrimary"
-        android:id="@+id/upperLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        >
-        <TextView
-            android:id="@+id/welcometxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:textColor="@color/strokeColor" />
 
-    </RelativeLayout>
+        <!--<TextView-->
+            <!--android:id="@+id/welcometxt"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#000" />-->
+
+
 
 
     <ProgressBar
@@ -50,7 +44,6 @@
         android:id="@+id/mSearch"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        app:defaultQueryHint="What are you looking for?"
         app:iconifiedByDefault="false"
 
         >

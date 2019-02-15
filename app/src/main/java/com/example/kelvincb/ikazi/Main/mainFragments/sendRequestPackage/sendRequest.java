@@ -199,15 +199,15 @@ public class sendRequest extends Fragment {
         Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         workerName.setTypeface(boldfont);
         sendRequest.setTypeface(boldfont);
+        fill.setTypeface(boldfont);
+        skillset.setTypeface(boldfont);
+        occupationTV.setTypeface(boldfont);
 
 
         font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
-
         jobDesc.setTypeface(font);
         etlandmark.setTypeface(font);
-        fill.setTypeface(font);
-        skillset.setTypeface(font);
-        occupationTV.setTypeface(font);
+
 
         sendRequest.setOnClickListener(new View.OnClickListener() {
             @Override

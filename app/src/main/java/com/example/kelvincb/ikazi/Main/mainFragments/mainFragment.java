@@ -72,15 +72,20 @@ public class mainFragment extends Fragment {
         final fetchUserName fetchUserName=new fetchUserName(getContext());
         fetchUserName.fetchname();
 
-        final TextView welcome=view.findViewById(R.id.welcometxt);
+//        final TextView welcome=view.findViewById(R.id.welcometxt);
 
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
-        welcome.setTypeface(font);
+
 
         Typeface myfont=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Light.ttf");
 
 
+        sv= view.findViewById(R.id.mSearch);
 
+        final TextView searchText =
+                sv.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+
+        searchText.setTypeface(myfont);
+        searchText.setTextSize(getResources().getDimension(R.dimen.textsize));
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -89,8 +94,9 @@ public class mainFragment extends Fragment {
 
                 progressBar.setVisibility(View.GONE);
 
+                searchText.setHint("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
 
-                welcome.setText("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
+//                welcome.setText("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
 
 
 
@@ -101,13 +107,7 @@ public class mainFragment extends Fragment {
 
 
         rv =  view.findViewById(R.id.recycler_view);
-        sv= view.findViewById(R.id.mSearch);
 
-        TextView searchText =
-                sv.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-
-        searchText.setTypeface(myfont);
-        searchText.setTextSize(getResources().getDimension(R.dimen.textsize));
 
         //SET ITS PROPETRIES
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
