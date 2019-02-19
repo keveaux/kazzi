@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_list_item_array_graphics">
+        <item>All Services</item>
+        <item>Logos</item>
+        <item>Posters</item>
+        <item>3D Artwork</item>
+    </string-array>
+    <string-array name="spinner_list_item_array_cleaning">
+        <item>All Services</item>
+        <item>Laundry</item>
+        <item>House Cleaning</item>
+        <item>Carpets</item>
+        <item>Office Cleaning</item>
+    </string-array>
+    <string-array name="spinner_list_item_array_grocery">
+        <item>All Services</item>
+        <item>Vegetables</item>
+        <item>Fruits</item>
+        <item>Cereals</item>
+    </string-array>
+    <string-array name="spinner_list_item_array_transport">
+        <item>All Services</item>
+        <item>Movers</item>
+        <item>Construction</item>
+        <item>Car Hire</item>
+    </string-array>
+    <string-array name="spinner_list_item_array_photographer">
+        <item>All Services</item>
+        <item>Indoor</item>
+        <item>Outdoor</item>
+
+    </string-array>
+    <string-array name="spinner_list_item_array_handy">
+        <item>All Services</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Painter</item>
+        <item>Carpenter</item>
+        <item>Glass Work</item>
+    </string-array>
+    <string-array name="spinner_list_item_array_caterer">
+        <item>All Services</item>
+        <item>Tent Hiring</item>
+        <item>Kids Activities</item>
+        <item>Ground Work</item>
+        <item>Catering</item>
+        <item>Event Planner</item>
+
+    </string-array>
+    <string-array name="spinner_list_item_array_gym">
+        <item>All Services</item>
+        <item>Personal Trainer</item>
+        <item>Equipment Vendor</item>
+
+    </string-array>
+    <string-array name="spinner_list_item_array_internet">
+        <item>All Services</item>
+        <item>WIFI Installation</item>
+        <item>DSTV OR ZUKU</item>
+
+    </string-array>
+</resources>

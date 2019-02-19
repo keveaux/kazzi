@@ -12,12 +12,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +25,6 @@ import com.example.kelvincb.ikazi.Main.recyclerViewItems.Worker;
 
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.fetchUserName;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 
@@ -86,6 +83,8 @@ public class mainFragment extends Fragment {
 
         searchText.setTypeface(myfont);
         searchText.setTextSize(getResources().getDimension(R.dimen.textsize));
+        searchText.setTextColor(Color.BLACK);
+        searchText.setHintTextColor(Color.BLACK);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -95,10 +94,6 @@ public class mainFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
 
                 searchText.setHint("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
-
-//                welcome.setText("Hey "+fetchUserName.getMname()+" let us help you look for a worker");
-
-
 
 
 
@@ -159,63 +154,52 @@ public class mainFragment extends Fragment {
 
         ArrayList<Worker> workers =new ArrayList<>();
         Worker p=new Worker();
-        p.setName("Phone Repair");
-        p.setImg(R.drawable.phonerepair);
+        p.setName("Graphic Designer");
+        p.setImg(R.drawable.graphicdesigner);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Painter");
-        p.setImg(R.drawable.painter);
+        p.setName("Cleaning");
+        p.setImg(R.drawable.cleaning);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Plumber");
-        p.setImg(R.drawable.plumber);
+        p.setName("Photographer");
+        p.setImg(R.drawable.photographer);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Wifi Installer");
-        p.setImg(R.drawable.phonerepair);
+        p.setName("Handy Person");
+        p.setImg(R.drawable.handyman);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Electrician");
-        p.setImg(R.drawable.electrician);
+        p.setName("Transport");
+        p.setImg(R.drawable.transport);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Electronics Repair");
-        p.setImg(R.drawable.electrician);
-        workers.add(p);
-
-        p.setName("Phone Repair");
-        p.setImg(R.drawable.phonerepair);
+        p.setName("Event Planning");
+        p.setImg(R.drawable.caterers);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Painter");
-        p.setImg(R.drawable.painter);
+        p.setName("Gym Services");
+        p.setImg(R.drawable.gym);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Plumber");
-        p.setImg(R.drawable.plumber);
+        p.setName("Internet Solutions");
+        p.setImg(R.drawable.internet);
         workers.add(p);
 
         p=new Worker();
-        p.setName("Wifi Installer");
-        p.setImg(R.drawable.phonerepair);
+        p.setName("Grocery Delivery");
+        p.setImg(R.drawable.groceries);
         workers.add(p);
 
-        p=new Worker();
-        p.setName("Electrician");
-        p.setImg(R.drawable.electrician);
-        workers.add(p);
 
-        p=new Worker();
-        p.setName("Electronics Repair");
-        p.setImg(R.drawable.electrician);
-        workers.add(p);
+
 
         return workers;
     }

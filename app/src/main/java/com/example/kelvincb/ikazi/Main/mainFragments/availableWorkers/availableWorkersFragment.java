@@ -50,7 +50,7 @@ public class availableWorkersFragment extends Fragment {
 
     public int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
-    String occupationtxt;
+    String occupationtxt,sub_service;
     FloatingActionButton fab;
 
     String latitude;
@@ -82,9 +82,12 @@ public class availableWorkersFragment extends Fragment {
         noInternet= new NoInternet();
 
         occupationtxt = getArguments().getString("occupation");
+        sub_service=getArguments().getString("subservice");
 
 
-        SITE_URL = "http://104.248.124.210/android/iKazi/phpFiles/workerdetails.php?occupation=" + occupationtxt;
+
+
+        SITE_URL = "http://104.248.124.210/android/iKazi/phpFiles/workerdetails.php?occupation="+occupationtxt+"&subservice="+sub_service;
 
 
         // Inflate the layout for this fragment

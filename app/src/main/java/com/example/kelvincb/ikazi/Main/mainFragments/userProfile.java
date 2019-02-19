@@ -76,7 +76,7 @@ import static android.app.Activity.RESULT_OK;
 public class userProfile extends Fragment {
 
     View view;
-   public static EditText name,phone_no;
+   public static EditText name,phone_no,first_name,last_name;
     Button update;
 
 
@@ -126,16 +126,20 @@ public class userProfile extends Fragment {
 
         name=view.findViewById(R.id.name_profile);
         phone_no=view.findViewById(R.id.phone_no_profile);
+        first_name=view.findViewById(R.id.first_name);
+        last_name=view.findViewById(R.id.second_name);
         update=view.findViewById(R.id.btn_update_profile);
         userImage = view.findViewById(R.id.user_profile_photo2);
 
 
-        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
-        logout.setTypeface(font1);
+        Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
+        logout.setTypeface(boldfont);
 
         Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Roboto-Bold.ttf");
         phone_no.setTypeface(font);
         name.setTypeface(font);
+        first_name.setTypeface(font);
+        last_name.setTypeface(font);
         update.setTypeface(font);
 
 
@@ -160,6 +164,8 @@ public class userProfile extends Fragment {
 
                 userImage.setTag("0");
                 name.setTag("0");
+                first_name.setTag("0");
+                last_name.setTag("0");
 
 
 
@@ -190,6 +196,43 @@ public class userProfile extends Fragment {
             }
         });
 
+        first_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                first_name.setTag("changed");
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        last_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                last_name.setTag("changed");
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
 
         userImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,7 +251,8 @@ public class userProfile extends Fragment {
                             if(userImage.getDrawable() == null){
                                 Toast.makeText(getActivity(), "you have not added an image", Toast.LENGTH_SHORT).show();
                             }else {
-                                if (userImage.getTag().equals("UpdatedTag") || name.getTag().equals("changed")){
+                                if (userImage.getTag().equals("UpdatedTag") || first_name.getTag().equals("change") ||name.getTag().equals("changed")
+                                        ||last_name.getTag().equals("changed")){
                                     ((MainActivity)getActivity()).updateData();
                                 } else {
                                     Toast.makeText(getActivity(), "you have not changed anything", Toast.LENGTH_SHORT).show();

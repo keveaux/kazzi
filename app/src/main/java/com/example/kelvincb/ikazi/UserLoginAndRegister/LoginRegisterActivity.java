@@ -1,5 +1,6 @@
 package com.example.kelvincb.ikazi.UserLoginAndRegister;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -114,6 +115,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
             }
 
+            @SuppressLint("WrongThread")
             @Override
             protected String doInBackground(Bitmap... params) {
                 Bitmap bitmap = params[0];
@@ -126,6 +128,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 data.put("phone",phoneET.getText().toString());
                 data.put("name",nameET.getText().toString());
                 data.put("token",token);
+                data.put("fname","");
+                data.put("lname","");
                 String result = rh.sendPostRequest(UPLOAD_URL,data);
 
                 return result;

@@ -74,12 +74,12 @@ public class adapterClass extends BaseAdapter {
         Typeface bold_font=Typeface.createFromAsset(c.getAssets(),"Roboto-Bold.ttf");
         ratingtxt.setTypeface(bold_font);
         distancetxt.setTypeface(bold_font);
-        skill_set.setTypeface(bold_font);
+        nametxt.setTypeface(bold_font);
 
 
         Typeface font=Typeface.createFromAsset(c.getAssets(),"Roboto-Light.ttf");
+        skill_set.setTypeface(font);
 
-        nametxt.setTypeface(font);
 
 
 

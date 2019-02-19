@@ -30,8 +30,11 @@
 
         android:id="@+id/mainprogressBar"
         style="?android:attr/progressBarStyleHorizontal"
+        android:background="@color/strokeColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toTopOf="parent"
 
 
         />

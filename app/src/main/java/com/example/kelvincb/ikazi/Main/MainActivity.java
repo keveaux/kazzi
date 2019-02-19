@@ -51,6 +51,8 @@ import java.util.Objects;
 import q.rorbin.badgeview.QBadgeView;
 
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.UPDATE_URL;
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.first_name;
+import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.last_name;
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.name;
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.phone_no;
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.userImage;
@@ -254,6 +256,13 @@ public class MainActivity extends AppCompatActivity {
             ProgressDialog loading;
             RequestHandler rh = new RequestHandler();
 
+            String pno=phone_no.getText().toString();
+
+            String username=name.getText().toString();
+
+            String fname=first_name.getText().toString();
+            String lname=last_name.getText().toString();
+
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -281,8 +290,11 @@ public class MainActivity extends AppCompatActivity {
                 HashMap<String,String> data = new HashMap<>();
 
                 data.put("image", uploadImage);
-                data.put("phone",phone_no.getText().toString());
-                data.put("name",name.getText().toString());
+                data.put("phone",pno);
+                data.put("name",username);
+                data.put("fname",fname);
+                data.put("lname",lname);
+
                 String result = rh.sendPostRequest(UPDATE_URL,data);
 
                 return result;
