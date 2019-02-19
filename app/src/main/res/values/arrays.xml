@@ -11,6 +11,7 @@
         <item>Laundry</item>
         <item>House Cleaning</item>
         <item>Carpets</item>
+        <item>Furniture</item>
         <item>Office Cleaning</item>
     </string-array>
     <string-array name="spinner_list_item_array_grocery">
