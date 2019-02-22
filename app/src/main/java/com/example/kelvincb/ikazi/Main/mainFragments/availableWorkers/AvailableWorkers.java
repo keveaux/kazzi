@@ -29,7 +29,8 @@ public class AvailableWorkers extends AppCompatActivity {
         setContentView(R.layout.activity_available_workers);
 
          bundle= new Bundle();
-        occupation=getIntent().getStringExtra("occupation");
+
+         occupation=getIntent().getStringExtra("occupation");
 
 
         toolbar=findViewById(R.id.toolbar);
@@ -108,6 +109,11 @@ public class AvailableWorkers extends AppCompatActivity {
         else if(occupation.equals("Grocery Delivery")){
             adapter = ArrayAdapter.createFromResource(this,
                     R.array.spinner_list_item_array_grocery, android.R.layout.simple_spinner_dropdown_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        }
+        else if(occupation.equals("Gardening")){
+            adapter = ArrayAdapter.createFromResource(this,
+                    R.array.spinner_list_item_array_gardening, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         }
 

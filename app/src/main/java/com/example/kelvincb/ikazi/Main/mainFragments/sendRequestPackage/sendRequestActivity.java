@@ -66,12 +66,7 @@ public class sendRequestActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
-
-        Intent intent=new Intent(sendRequestActivity.this, MainActivity.class);
-        intent.putExtra("EXTRA","openMain");
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        this.finish();
 
     }
 }

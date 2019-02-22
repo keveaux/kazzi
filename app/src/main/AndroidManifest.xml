@@ -17,7 +17,6 @@
 
     <uses-feature android:name="android.hardware.location.gps" />
 
-    <!--  -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,8 +24,11 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:windowSoftInputMode="adjustPan"
-        android:theme="@style/MyMaterialTheme">
+        android:theme="@style/MyMaterialTheme"
+        android:windowSoftInputMode="adjustPan">
+        <activity android:name=".WorkerProfileActivity"></activity>
+        <activity android:name=".mytrial"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyANg9sYZvRemUAQ1BvnEw7oA5apwAJ_AH0" />
@@ -36,7 +38,7 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Main.MainActivity"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize" />
 
         <service android:name=".UserLoginAndRegister.userLogin.firebaseStuff.MyFirebaseMessagingService">
             <intent-filter>
@@ -55,6 +57,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".Main.mainFragments.availableWorkers.mLocation.autoCompleteLocation" />
         <activity android:name=".Main.mainFragments.userHistory.processedRequestPackage.processedInfo" />
@@ -72,9 +75,11 @@
         </service>
 
         <activity android:name=".RequestRejected" />
-        <activity android:name=".trial" />
+        <activity android:name=".trial"></activity>
         <activity android:name=".Main.mainFragments.availableWorkers.AvailableWorkers" />
-        <activity android:name=".Main.mainFragments.sendRequestPackage.sendRequestActivity"></activity>
+        <activity
+            android:name=".Main.mainFragments.sendRequestPackage.sendRequestActivity"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

@@ -194,6 +194,11 @@ public class mainFragment extends Fragment {
         workers.add(p);
 
         p=new Worker();
+        p.setName("Gardening");
+        p.setImg(R.drawable.gardening);
+        workers.add(p);
+
+        p=new Worker();
         p.setName("Grocery Delivery");
         p.setImg(R.drawable.groceries);
         workers.add(p);

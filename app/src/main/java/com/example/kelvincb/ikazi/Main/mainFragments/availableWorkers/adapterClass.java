@@ -17,7 +17,9 @@ import android.widget.Toast;
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest;
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequestActivity;
 import com.example.kelvincb.ikazi.R;
+import com.example.kelvincb.ikazi.WorkerProfileActivity;
 import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
+import com.example.kelvincb.ikazi.trial;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -67,7 +69,15 @@ public class adapterClass extends BaseAdapter {
         TextView distancetxt=convertView.findViewById(R.id.distance);
         TextView skill_set=convertView.findViewById(R.id.skill_set);
         ImageView image=convertView.findViewById(R.id.worker_image);
+        ImageView viewprofile=convertView.findViewById(R.id.viewprofile);
 //        Button book_worker_btn =convertView.findViewById(R.id.book_worker);
+
+        viewprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c.startActivity(new Intent(c, WorkerProfileActivity.class));
+            }
+        });
 
 
 

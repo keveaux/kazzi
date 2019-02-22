@@ -5,9 +5,13 @@
         <item>Logos</item>
         <item>Posters</item>
         <item>3D Artwork</item>
+        <item>Web Developer</item>
+
     </string-array>
     <string-array name="spinner_list_item_array_cleaning">
         <item>All Services</item>
+        <item>Dry Cleaning</item>
+        <item>Duvet Cleaning</item>
         <item>Laundry</item>
         <item>House Cleaning</item>
         <item>Carpets</item>
@@ -59,6 +63,13 @@
         <item>All Services</item>
         <item>WIFI Installation</item>
         <item>DSTV OR ZUKU</item>
+
+    </string-array>
+
+    <string-array name="spinner_list_item_array_gardening">
+        <item>All Services</item>
+        <item>Gardener</item>
+        <item>Fumigator</item>
 
     </string-array>
 </resources>

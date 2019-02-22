@@ -1,188 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-
-    <RelativeLayout
-        android:id="@+id/relative"
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
 
-        >
-
-
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/worker_profile_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:elevation="4dp"
-            android:src="@drawable/success" />
-
-        <TextView
-            android:id="@+id/workername"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/worker_profile_image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:gravity="center"
-            android:text="Kevin Muriithi"
-            android:textColor="#fff" />
+            android:background="@color/colorPrimary"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/workername"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:textSize="10sp"
-            android:gravity="center"
-            android:text="can do almost any task"
-            android:textColor="@color/strokeColor" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/proffession"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/description"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="8sp"
-            android:gravity="center"
-            android:text="Painter"
-            android:textColor="#fff" />
 
-    </RelativeLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/worker_profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:elevation="4dp"
+                android:src="@drawable/success" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relative">
+            <TextView
+                android:id="@+id/workername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/worker_profile_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Kevin Muriithi"
+                android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/fill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fill"
-            android:textColor="#000000"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/workername"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="can do almost any task"
+                android:textColor="@color/strokeColor"
+                android:textSize="10sp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/edittext_background"
-            android:id="@+id/dateET"
-            android:hint=" Date of Task"
-            android:layout_below="@+id/fill"
-            android:inputType="date"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:padding="4dp"
+            <TextView
+                android:id="@+id/proffession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Painter"
+                android:textColor="#fff"
+                android:textSize="8sp" />
 
-            />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/edittext_background"
-            android:id="@+id/timeET"
-            android:hint=" Time"
-            android:layout_below="@+id/dateET"
-            android:inputType="date"
-            android:drawablePadding="4dp"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:padding="4dp"
-
-            />
+        </RelativeLayout>
 
 
 
-        <EditText
-            android:id="@+id/jobDescET"
-            android:inputType="textMultiLine"
-            android:lines="5"
-            android:minLines="6"
-            android:maxLines="10"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_below="@+id/timeET"
-            android:gravity="start"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:scrollbars="vertical"
-            android:background="@drawable/edittext_background"
-            android:hint=" Job Description"
-            android:padding="4dp"
-            android:textSize="12sp"
-
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/edittext_background"
-            android:id="@+id/landmarkET"
-            android:hint=" Landmark"
-            android:padding="4dp"
-            android:textSize="12sp"
-            android:layout_below="@+id/jobDescET"
-            android:drawablePadding="4dp"
-            android:layout_marginTop="10dp"
-
-            />
-
-        <Button
-            android:id="@+id/btn_send_request"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/landmarkET"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/mybutton"
-            android:text="Request"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            />
-
-        <ProgressBar
-            android:id="@+id/send_request_progressBar"
-            style="?android:attr/progressBarStyle"
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:indeterminateDrawable="@drawable/progress"
-            android:layout_below="@id/btn_send_request"
-            android:visibility="gone"
-            />
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/relative"
+            app:layout_constraintTop_toBottomOf="@+id/relative">
+
+            <TextView
+                android:id="@+id/fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/fill"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/dateET"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/fill"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint=" Date of Task"
+                android:inputType="date"
+                android:padding="4dp"
+                android:textSize="12sp"
+
+                />
+
+            <EditText
+                android:id="@+id/timeET"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/dateET"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edittext_background"
+                android:drawablePadding="4dp"
+                android:hint=" Time"
+                android:inputType="date"
+                android:padding="4dp"
+                android:textSize="12sp"
+
+                />
 
 
-    </RelativeLayout>
+            <EditText
+                android:id="@+id/jobDescET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeET"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="start"
+                android:hint=" Job Description"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="10"
+                android:minLines="6"
+                android:padding="4dp"
+                android:scrollbars="vertical"
+                android:textSize="12sp"
+
+                />
+
+            <EditText
+                android:id="@+id/landmarkET"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/jobDescET"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edittext_background"
+                android:drawablePadding="4dp"
+                android:hint=" Landmark"
+                android:padding="4dp"
+                android:textSize="12sp"
+
+                />
+
+            <Button
+                android:id="@+id/btn_send_request"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/landmarkET"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/mybutton"
+                android:text="Request"
+                android:textColor="#fff" />
+
+            <ProgressBar
+                android:id="@+id/send_request_progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_send_request"
+                android:indeterminateDrawable="@drawable/progress"
+                android:visibility="gone" />
 
 
-</android.support.constraint.ConstraintLayout>
+        </RelativeLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

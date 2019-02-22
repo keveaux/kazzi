@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+
+            >
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/circularImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:civ_border_color="#401FD5AD"
+                android:layout_alignParentRight="true"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/handyman"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Kevin Mirera"
+                android:id="@+id/name"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Google Certified Associate Android Developer | Android App, Game, Web and Software Developer."/>
+
+
+            <ImageView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:src="@drawable/email"
+                android:layout_marginStart="20dp"/>
+
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:src="@drawable/facebook"
+                android:layout_toEndOf="@id/email"
+                android:layout_marginStart="30dp"/>
+
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:src="@drawable/twitter_logo"
+                android:layout_toEndOf="@id/facebook"
+                android:layout_marginStart="30dp"/>
+
+            <ImageView
+                android:id="@+id/linkedin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:src="@drawable/linkedin_logo"
+                android:layout_toEndOf="@id/twitter"
+                android:layout_marginStart="30dp"/>
+
+            <ImageView
+                android:id="@+id/github"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:src="@drawable/github_logo"
+                android:layout_toEndOf="@id/linkedin"
+                android:layout_marginStart="30dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/cardlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/statscard"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:elevation="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/success"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/cakepop"/>
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/success"
+                        android:layout_marginStart="20dp"
+                        android:textSize="20dp"
+                        android:text="4.5 Rating"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/success"
+                        android:layout_below="@+id/rating"
+                        android:layout_marginStart="20dp"
+                        android:textSize="20dp"
+                        android:text="30 Tasks Completed"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/comentsection"
+                android:layout_below="@+id/statscard"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:elevation="20dp"
+                android:layout_margin="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/user_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/cakepop"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:layout_gravity="top"
+                        android:id="@+id/user_name"
+                        android:text="keveaux"
+                        android:textSize="13sp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/user_image"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:text="very good at his job"
+                        android:textSize="13sp"
+                        android:layout_margin="10dp"
+                        android:layout_below="@+id/user_name"
+                        />
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/comment"
+                        android:isIndicator="false"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_margin="10dp"
+                        />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_below="@+id/comentsection"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:elevation="20dp"
+                android:layout_margin="10dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My Work"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:id="@+id/mywork"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="0dp"/>
+
+                    <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="bottom"
+                        android:padding="10dip"
+                        app:centered="true"
+                        app:fillColor="@color/colorPrimaryDark"
+                        app:pageColor="#fff"
+                        app:snap="false" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

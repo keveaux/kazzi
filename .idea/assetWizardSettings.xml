@@ -45,10 +45,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\user.png" />
-                                      <entry key="outputName" value="my_profile" />
+                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\envelope.png" />
+                                      <entry key="outputName" value="email" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="000000" />
+                                      <entry key="themeColor" value="1fd5ad" />
                                     </map>
                                   </option>
                                 </PersistentState>
