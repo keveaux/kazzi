@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -31,6 +32,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelvincb.ikazi.R;
 import com.example.kelvincb.ikazi.UserLoginAndRegister.LoginRegisterActivity;
+import com.example.kelvincb.ikazi.fetchPhoneNumber;
 import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -41,10 +43,11 @@ import java.util.Map;
 public class processedInfo extends AppCompatActivity {
 
    private TextView worker_name, acceptedTV, timeTV, dateTV, jobDescriptionTV,occupationtextview,datetextview,timetextview,jobdesctv,TVskillset;
-   private String workerId,rating,name;
+   private String workerId,rating,name,user_name;
     ImageView workerImage;
     Toolbar toolbar;
     RatingBar ratingBar;
+    EditText commenttxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +114,7 @@ public class processedInfo extends AppCompatActivity {
             String jobDescription = bundle.getString("jobDescription");
             final String worker_pno = bundle.getString("worker_pno");
             workerId=bundle.getString("workerId");
+            user_name=bundle.getString("user_name");
 
 
             worker_name.setText(name);
@@ -180,6 +184,9 @@ public class processedInfo extends AppCompatActivity {
         final TextView text = dialog.findViewById(R.id.text_dialog);
         text.setText(msg);
 
+        commenttxt=dialog.findViewById(R.id.comment);
+
+
         Typeface font1=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
         text.setTypeface(font1);
 
@@ -248,6 +255,12 @@ public class processedInfo extends AppCompatActivity {
     private void sendData() {
 //        progressBar.setVisibility(View.VISIBLE);
         String MyURL="http://104.248.124.210/android/iKazi/phpFiles/sendRating.php";
+        final String comment=commenttxt.getText().toString();
+
+        final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(processedInfo.this);
+        fetchPhoneNumber.mynumber();
+
+
         StringRequest stringRequest=new StringRequest(Request.Method.POST, MyURL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -272,6 +285,9 @@ public class processedInfo extends AppCompatActivity {
                 Map<String,String> params=new HashMap<>();
                 params.put("workerId",workerId);
                 params.put("rating", rating);
+                params.put("comment",comment);
+                params.put("user_name",user_name);
+                params.put("pno",fetchPhoneNumber.getPhone_no());
 
                 return params;
             }

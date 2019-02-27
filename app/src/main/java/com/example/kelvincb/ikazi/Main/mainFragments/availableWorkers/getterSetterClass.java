@@ -1,7 +1,8 @@
 package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers;
 
 public class getterSetterClass {
-    String id,name,rating,numberOfRates,imageUrl,occupation,longitude,latitude,skillSet,phoneNumber,location,token;
+    String id,name,rating,numberOfRates,imageUrl,work_done_one,work_done_two,work_done_three
+            ,occupation,longitude,latitude,skillSet,phoneNumber,location,token;
     float distance;
 
     public String getName() {
@@ -48,8 +49,32 @@ public class getterSetterClass {
         return imageUrl;
     }
 
+    public String getWork_done_one() {
+        return work_done_one;
+    }
+
+    public String getWork_done_two() {
+        return work_done_two;
+    }
+
+    public String getWork_done_three() {
+        return work_done_three;
+    }
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public void setWork_done_one(String work_done_one) {
+        this.work_done_one = work_done_one;
+    }
+
+    public void setWork_done_two(String work_done_two) {
+        this.work_done_two = work_done_two;
+    }
+
+    public void setWork_done_three(String work_done_three) {
+        this.work_done_three = work_done_three;
     }
 
     public String getOccupation() {

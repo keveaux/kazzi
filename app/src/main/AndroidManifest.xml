@@ -26,12 +26,12 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".WorkerProfileActivity"></activity>
+        <activity android:name=".WorkerProfile.WorkerProfileActivity"></activity>
         <activity android:name=".mytrial"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyANg9sYZvRemUAQ1BvnEw7oA5apwAJ_AH0" />
+            android:value="AIzaSyAdbphG3i7Vi0mrSWvY3LV9newFhHrIvcE" />
 
         <activity
             android:name=".UserLoginAndRegister.LoginRegisterActivity"

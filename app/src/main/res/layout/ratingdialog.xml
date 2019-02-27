@@ -22,13 +22,15 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
          />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please rate"
         android:id="@+id/text_dialog"
         android:layout_below="@+id/ratingBar"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="20dp"
@@ -37,13 +39,22 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal" />
 
+    <EditText
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_dialog"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:hint="please leave a comment" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="OK"
         android:id="@+id/btn_dialog"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_below="@+id/text_dialog"
+        android:layout_below="@+id/comment"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_main_background"
         android:layout_centerHorizontal="true"

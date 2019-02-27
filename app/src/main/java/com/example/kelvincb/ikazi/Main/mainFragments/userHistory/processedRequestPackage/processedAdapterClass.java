@@ -111,6 +111,7 @@ public class processedAdapterClass extends BaseAdapter {
                     String worker_pno=getterSetterClass.getWorker_phone_number();
                     String workerId=getterSetterClass.getWorkerId();
                     String skillset=getterSetterClass.getSkillset();
+                    String user_name=getterSetterClass.getUser_name();
 
 
                     Bundle sendData=new Bundle();
@@ -123,6 +124,7 @@ public class processedAdapterClass extends BaseAdapter {
                     sendData.putString("workerId",workerId);
                     sendData.putString("skill",skillset);
                     sendData.putString("url",getterSetterClass.getImageUrl());
+                    sendData.putString("user_name",user_name);
 
                     Intent intent=new Intent(c,processedInfo.class);
                     intent.putExtras(sendData);

@@ -80,6 +80,11 @@ public class JsonDownloader {
                                 String skillSet=jsonObject.getString("skillSet");
                                 String phoneNumber=jsonObject.getString("phonenumber");
                                 String token=jsonObject.getString("token");
+                                String work_done_one=jsonObject.getString("work_done_one");
+                                String work_done_two=jsonObject.getString("work_done_two");
+                                String work_done_three=jsonObject.getString("work_done_three");
+
+
 
 
 
@@ -96,6 +101,11 @@ public class JsonDownloader {
                                 GettersSetters.setPhoneNumber(phoneNumber);
                                 GettersSetters.setLocation(streetName);
                                 GettersSetters.setToken(token);
+                                GettersSetters.setWork_done_one(work_done_one);
+                                GettersSetters.setWork_done_two(work_done_two);
+                                GettersSetters.setWork_done_three(work_done_three);
+
+
 
 
                                 Location locationA = new Location("point A");

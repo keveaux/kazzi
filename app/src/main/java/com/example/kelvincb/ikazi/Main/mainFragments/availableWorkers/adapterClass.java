@@ -3,23 +3,19 @@ package com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest;
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequestActivity;
 import com.example.kelvincb.ikazi.R;
-import com.example.kelvincb.ikazi.WorkerProfileActivity;
+import com.example.kelvincb.ikazi.WorkerProfile.WorkerProfileActivity;
 import com.example.kelvincb.ikazi.mPicasso.PicassoClient;
-import com.example.kelvincb.ikazi.trial;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -28,6 +24,7 @@ public class adapterClass extends BaseAdapter {
 
     Context c;
     ArrayList<getterSetterClass> availableWorkersList;
+    double worker_rating;
 
 
 
@@ -69,15 +66,10 @@ public class adapterClass extends BaseAdapter {
         TextView distancetxt=convertView.findViewById(R.id.distance);
         TextView skill_set=convertView.findViewById(R.id.skill_set);
         ImageView image=convertView.findViewById(R.id.worker_image);
-        ImageView viewprofile=convertView.findViewById(R.id.viewprofile);
+        ImageButton viewprofile=convertView.findViewById(R.id.viewprofile);
 //        Button book_worker_btn =convertView.findViewById(R.id.book_worker);
 
-        viewprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                c.startActivity(new Intent(c, WorkerProfileActivity.class));
-            }
-        });
+
 
 
 
@@ -105,40 +97,47 @@ public class adapterClass extends BaseAdapter {
             ratingtxt.setText("" + 0.0);
         }else {
             double numberofrates= Double.parseDouble(getterSetterClass.getNumberOfRates());
-            double worker_rating=rating/numberofrates;
+            worker_rating=rating/numberofrates;
             DecimalFormat df = new DecimalFormat("#.##");
             ratingtxt.setText(""+df.format(worker_rating));
         }
 
 
 
+
         //fetch image from online using picasso
         PicassoClient.loadImage(getterSetterClass.getImageUrl(),image);
 
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        final String ratingstr= String.valueOf(df.format(worker_rating));
+
+        viewprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(c,WorkerProfileActivity.class);
+                intent.putExtra("EXTRA","first");
+                intent.putExtra("id",getterSetterClass.getId());
+                intent.putExtra("name",getterSetterClass.getName());
+                intent.putExtra("skill",getterSetterClass.getSkillSet());
+                intent.putExtra("occupation",getterSetterClass.getOccupation());
+                intent.putExtra("url",getterSetterClass.getImageUrl());
+                intent.putExtra("rating", ratingstr);
+                intent.putExtra("url_one", getterSetterClass.getWork_done_one());
+                intent.putExtra("url_two", getterSetterClass.getWork_done_two());
+                intent.putExtra("url_three", getterSetterClass.getWork_done_three());
+
+
+                c.startActivity(intent);
+
+            }
+        });
 
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-//                sendRequest myFragment = new sendRequest();
-//
-//                Bundle args = new Bundle();
-//
-//                args.putString("id", getterSetterClass.getId());
-//                args.putString("name",getterSetterClass.getName());
-//                args.putString("skill",getterSetterClass.getSkillSet());
-//                args.putString("occupation",getterSetterClass.getOccupation());
-//                args.putString("location",getterSetterClass.getLocation());
-//                args.putString("token",getterSetterClass.getToken());
-//                args.putString("url",getterSetterClass.getImageUrl());
-//
-//
-//                myFragment.setArguments(args);
-//
-//                activity.getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
 
                 Intent i=new Intent(c,sendRequestActivity.class);
                 i.putExtra("EXTRA","first");
