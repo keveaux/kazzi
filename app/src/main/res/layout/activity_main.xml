@@ -29,8 +29,22 @@
             android:textStyle="bold"
              />
 
+        <ImageView
+            android:id="@+id/adsImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/advertising"
+            android:layout_marginEnd="20dp"
+
+            />
+
 
     </android.support.v7.widget.Toolbar>
+
+
+
+
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
@@ -54,6 +68,10 @@
 
     </android.support.design.widget.BottomNavigationView>
 
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/viewKonfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>

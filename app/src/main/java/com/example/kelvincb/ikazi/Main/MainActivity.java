@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -49,6 +50,9 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.Objects;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 import q.rorbin.badgeview.QBadgeView;
 
 import static com.example.kelvincb.ikazi.Main.mainFragments.userProfile.UPDATE_URL;
@@ -90,16 +94,16 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-//        title=findViewById(R.id.title_main);
-//        Typeface font=Typeface.createFromAsset(getAssets(),"Roboto-Bold.ttf");
-//        title.setTypeface(font);
+        ImageView adimage=findViewById(R.id.adsImage);
+        adimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confetti();
+                new ads(getApplicationContext());
+            }
+        });
 
-//        MobileAds.initialize(this,
-//                "ca-app-pub-3940256099942544~3347511713");
 
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
 
 
         navigation =  findViewById(R.id.navigation);
@@ -121,6 +125,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    public void confetti(){
+        KonfettiView viewKonfetti=findViewById(R.id.viewKonfetti);
+        viewKonfetti.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA,Color.BLUE,Color.RED,Color.CYAN)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .addSizes(new Size(7,8))
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .setPosition(-50f, viewKonfetti.getWidth() + 50f, -50f, -50f)
+                .streamFor(300, 5000L);
     }
 
 

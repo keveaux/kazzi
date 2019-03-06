@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.kelvincb.ikazi.Main.mainFragments.sendRequestPackage.sendRequest;
@@ -13,13 +15,29 @@ import com.example.kelvincb.ikazi.WorkerProfile.WorkerProfileFragment;
 
 public class WorkerProfileActivity extends AppCompatActivity {
 
-    Fragment fragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_profile);
+
+        Toolbar toolbar=findViewById(R.id.profile_toolbar);
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onBackPressed();
+            }
+        });
 
 
         switch (getIntent().getStringExtra("EXTRA")) {

@@ -6,6 +6,7 @@
     <color name="bgBottomNavigation">#d1395c</color>
     <color name="duskYellow">#FFC107</color>
     <color name="lightGrey">#020005</color>
+    <color name="colorPrimaryLight">#1FD5AD</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>

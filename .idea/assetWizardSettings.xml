@@ -45,10 +45,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\info.png" />
-                                      <entry key="outputName" value="eye" />
+                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\left-arrow.png" />
+                                      <entry key="outputName" value="left_arrow" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="fc0803" />
+                                      <entry key="themeColor" value="007352" />
                                     </map>
                                   </option>
                                 </PersistentState>
