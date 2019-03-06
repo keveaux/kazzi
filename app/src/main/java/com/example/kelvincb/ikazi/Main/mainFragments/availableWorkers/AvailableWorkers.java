@@ -73,7 +73,7 @@ public class AvailableWorkers extends AppCompatActivity {
         final Spinner spinner = (Spinner) item.getActionView();
 
         ArrayAdapter<CharSequence> adapter = null;
-        if(occupation.equals("Graphic Designer")){
+        if(occupation.equals("Computer Services")){
             adapter = ArrayAdapter.createFromResource(this,
                     R.array.spinner_list_item_array_graphics, R.layout.layout_drop_title);
             adapter.setDropDownViewResource(R.layout.layout_drop_list);
@@ -114,6 +114,11 @@ public class AvailableWorkers extends AppCompatActivity {
         else if(occupation.equals("Gardening")){
             adapter = ArrayAdapter.createFromResource(this,
                     R.array.spinner_list_item_array_gardening, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
+        }
+        else if(occupation.equals("Mechanical Services")){
+            adapter = ArrayAdapter.createFromResource(this,
+                    R.array.spinner_list_item_array_car_service, R.layout.layout_drop_title);
             adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }
 

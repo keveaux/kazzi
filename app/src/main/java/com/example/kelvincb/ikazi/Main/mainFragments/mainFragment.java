@@ -154,7 +154,7 @@ public class mainFragment extends Fragment {
 
         ArrayList<Worker> workers =new ArrayList<>();
         Worker p=new Worker();
-        p.setName("Graphic Designer");
+        p.setName("Computer Services");
         p.setImg(R.drawable.graphicdesigner);
         workers.add(p);
 
@@ -201,6 +201,11 @@ public class mainFragment extends Fragment {
         p=new Worker();
         p.setName("Grocery Delivery");
         p.setImg(R.drawable.groceries);
+        workers.add(p);
+
+        p=new Worker();
+        p.setName("Mechanical Services");
+        p.setImg(R.drawable.mechanic);
         workers.add(p);
 
 

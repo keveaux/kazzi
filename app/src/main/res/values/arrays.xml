@@ -6,6 +6,8 @@
         <item>Posters</item>
         <item>3D Artwork</item>
         <item>Web Developer</item>
+        <item>App Developer</item>
+
 
     </string-array>
     <string-array name="spinner_list_item_array_cleaning">
@@ -70,6 +72,23 @@
         <item>All Workers</item>
         <item>Gardener</item>
         <item>Fumigator</item>
+        <item>Pest Control</item>
+
 
     </string-array>
+
+
+    <string-array name="spinner_list_item_array_car_service">
+        <item>All Workers</item>
+        <item>Auto Electrical System</item>
+        <item>Air Conditioner</item>
+        <item>Automotive Engineering</item>
+        <item>Body Shaping</item>
+        <item>Car Mechanic</item>
+        <item>Motorcycle Mechanic</item>
+        <item>Paint Job</item>
+        <item>Wheel Alignment</item>
+    </string-array>
+
+
 </resources>

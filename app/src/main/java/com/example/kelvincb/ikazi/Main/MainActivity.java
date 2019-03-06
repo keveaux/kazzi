@@ -21,6 +21,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kelvincb.ikazi.Main.mainFragments.AboutFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.availableWorkers.availableWorkersFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.mainFragment;
 import com.example.kelvincb.ikazi.Main.mainFragments.userHistory.myHistoryFragment;
@@ -94,14 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        ImageView adimage=findViewById(R.id.adsImage);
-        adimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                confetti();
-                new ads(getApplicationContext());
-            }
-        });
+
 
 
 
@@ -128,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void confetti(){
+        new ads(getApplicationContext());
         KonfettiView viewKonfetti=findViewById(R.id.viewKonfetti);
         viewKonfetti.build()
                 .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA,Color.BLUE,Color.RED,Color.CYAN)
@@ -332,4 +328,23 @@ public class MainActivity extends AppCompatActivity {
         return encodedImage;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+            getMenuInflater().inflate(R.menu.main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about_page:
+                loadFragment(new AboutFragment());
+                break;
+            case R.id.ads:
+                confetti();
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
