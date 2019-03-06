@@ -28,9 +28,9 @@ public class AvailableWorkers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_available_workers);
 
-         bundle= new Bundle();
+        bundle= new Bundle();
 
-         occupation=getIntent().getStringExtra("occupation");
+        occupation=getIntent().getStringExtra("occupation");
 
 
         toolbar=findViewById(R.id.toolbar);
@@ -52,7 +52,7 @@ public class AvailableWorkers extends AppCompatActivity {
         });
 
 
-          }
+    }
 
     @Override
     public void onBackPressed() {
@@ -74,47 +74,47 @@ public class AvailableWorkers extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter = null;
         if(occupation.equals("Graphic Designer")){
-           adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_graphics, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            adapter = ArrayAdapter.createFromResource(this,
+                    R.array.spinner_list_item_array_graphics, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Cleaning")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_cleaning, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_cleaning, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Photographer")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_photographer, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_photographer, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Handy Person")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_handy, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_handy, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Transport")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_transport, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_transport, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Event Planning")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_caterer, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_caterer, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Gym Services")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_gym, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_gym, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }else if(occupation.equals("Internet Solutions")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_internet, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_internet, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }
         else if(occupation.equals("Grocery Delivery")){
-            adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_grocery, android.R.layout.simple_spinner_dropdown_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+             adapter = ArrayAdapter.createFromResource(this,
+                    R.array.spinner_list_item_array_grocery, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }
         else if(occupation.equals("Gardening")){
             adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_list_item_array_gardening, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    R.array.spinner_list_item_array_gardening, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }
 
 
@@ -125,7 +125,7 @@ public class AvailableWorkers extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
 
                 String spinner_items = spinner.getSelectedItem().toString();
 

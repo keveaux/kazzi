@@ -83,6 +83,7 @@ public class JsonDownloader {
                                 String work_done_one=jsonObject.getString("work_done_one");
                                 String work_done_two=jsonObject.getString("work_done_two");
                                 String work_done_three=jsonObject.getString("work_done_three");
+                                String availability=jsonObject.getString("availability");
 
 
 
@@ -125,7 +126,7 @@ public class JsonDownloader {
 
 
 
-                                if (distance<15000){
+                                if (distance<15000&&availability.equals("1")){
                                     workerList.add(GettersSetters);
 
                                 }

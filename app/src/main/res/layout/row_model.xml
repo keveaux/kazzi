@@ -30,6 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/eye"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="#fff"
                 />
 
             <de.hdodenhof.circleimageview.CircleImageView

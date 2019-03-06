@@ -30,7 +30,6 @@
                 android:background="#fff"
                 app:cardCornerRadius="40dp"
                 card_view:cardBackgroundColor="#fff"
-                android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
                 >
 

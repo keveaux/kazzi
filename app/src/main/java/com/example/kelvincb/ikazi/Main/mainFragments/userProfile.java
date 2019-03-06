@@ -108,7 +108,7 @@ public class userProfile extends Fragment {
         view=inflater.inflate(R.layout.fragment_my_profile, container, false);
 
 
-        mAuth = FirebaseAuth.getInstance();
+            mAuth = FirebaseAuth.getInstance();
 
 
         TextView logout=view.findViewById(R.id.logouttxt);

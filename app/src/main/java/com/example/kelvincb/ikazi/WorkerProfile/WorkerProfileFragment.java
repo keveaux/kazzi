@@ -77,7 +77,7 @@ public class WorkerProfileFragment extends Fragment {
 
         //initiate view pager
         ViewPager viewPager =view.findViewById(R.id.view_pager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getContext(), imageUrls);
+            ViewPagerAdapter adapter = new ViewPagerAdapter(getContext(), imageUrls);
         viewPager.setAdapter(adapter);
 
         CirclePageIndicator indicator =

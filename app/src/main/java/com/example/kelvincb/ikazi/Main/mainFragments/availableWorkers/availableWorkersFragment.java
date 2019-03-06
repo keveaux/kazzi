@@ -183,40 +183,6 @@ public class availableWorkersFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onResume() {
-
-        switch (getArguments().getString("EXTRA")) {
-
-            case "second":
-
-                Bundle bundle = getArguments();
-                if (bundle != null) {
-                    latitude = bundle.getString("lat");
-                    longitude = bundle.getString("lon");
-
-                    lat = Double.parseDouble(latitude);
-                    lon = Double.parseDouble(longitude);
-                    streetName = streetName(lat, lon);
-
-                    locationtxt.setText(streetName);
-                }
-                break;
-                default:
-                    NoInternet noInternet=new NoInternet();
-                    if(noInternet.isConnected(getActivity())){
-
-                        getmyLocation();
-                    }else {
-                        noInternet.builddialog(getActivity());
-                    }
-                    break;
-        }
-
-        fetchWorkers();
-
-        super.onResume();
-    }
 
     public void fetchWorkers() {
         if (getActivity() != null) {

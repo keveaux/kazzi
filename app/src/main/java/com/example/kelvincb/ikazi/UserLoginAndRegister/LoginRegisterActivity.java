@@ -91,7 +91,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(LoginRegisterActivity.this, "Uploading...", null,true,true);
+                loading = ProgressDialog.show(LoginRegisterActivity.this, " Uploading...", null,true,true);
             }
 
             @Override
