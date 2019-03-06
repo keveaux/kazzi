@@ -7,11 +7,12 @@
     tools:context=".Main.mainFragments.userHistory.processingRequest.inProcessRequest">
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
+        style="?android:attr/progressBarStyle"
         android:id="@+id/processing_progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/processing_ListView"
+        android:indeterminateDrawable="@drawable/progress"
         android:indeterminate="true"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent" />
@@ -42,7 +43,6 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="99dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="90dp"
         />
 
 </FrameLayout>

@@ -7,11 +7,13 @@
     tools:context=".Main.mainFragments.userHistory.processedRequestPackage.ProcessedRequest">
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
+        style="?android:attr/progressBarStyle"
         android:id="@+id/processed_progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/processed_ListView"
+        android:indeterminateDrawable="@drawable/progress"
+
         android:indeterminate="true"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent" />

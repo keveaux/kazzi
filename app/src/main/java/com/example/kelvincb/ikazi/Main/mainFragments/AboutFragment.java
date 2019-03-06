@@ -32,7 +32,7 @@ public class AboutFragment extends Fragment {
 
             }
         });
-        
+
 
         String description=getActivity().getResources().getString(R.string.slide_1_desc);
         View aboutPage = new AboutPage(getContext())

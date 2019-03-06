@@ -61,9 +61,6 @@ public class mainFragment extends Fragment {
         }
 
         progressBar=view.findViewById(R.id.mainprogressBar);
-        progressBar.getProgressDrawable().setColorFilter(
-                Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
-
 
 
         final fetchUserName fetchUserName=new fetchUserName(getContext());

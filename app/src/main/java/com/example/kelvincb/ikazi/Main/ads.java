@@ -23,13 +23,6 @@ public class ads {
 
         loadRewardedVideo();
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startvideo();
-
-            }},3000);
 
     }
 
@@ -48,7 +41,7 @@ public class ads {
     RewardedVideoAdListener rewardedVideoAdListener = new RewardedVideoAdListener() {
         @Override
         public void onRewardedVideoAdLoaded() {
-
+                startvideo();
         }
 
         @Override
