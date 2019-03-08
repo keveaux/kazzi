@@ -206,6 +206,11 @@ public class mainFragment extends Fragment {
         workers.add(p);
 
 
+        p=new Worker();
+        p.setName("Beauty Services");
+        p.setImg(R.drawable.beauty);
+        workers.add(p);
+
 
 
         return workers;

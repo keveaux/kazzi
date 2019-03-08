@@ -121,6 +121,11 @@ public class AvailableWorkers extends AppCompatActivity {
                     R.array.spinner_list_item_array_car_service, R.layout.layout_drop_title);
             adapter.setDropDownViewResource(R.layout.layout_drop_list);
         }
+        else if(occupation.equals("Beauty Services")){
+            adapter = ArrayAdapter.createFromResource(this,
+                    R.array.spinner_list_item_array_beauty, R.layout.layout_drop_title);
+            adapter.setDropDownViewResource(R.layout.layout_drop_list);
+        }
 
 
 

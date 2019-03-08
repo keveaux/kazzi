@@ -90,5 +90,14 @@
         <item>Wheel Alignment</item>
     </string-array>
 
+    <string-array name="spinner_list_item_array_beauty">
+        <item>All Workers</item>
+        <item>Saloonist</item>
+        <item>Nails</item>
+        <item>Masseuse</item>
+
+
+    </string-array>
+
 
 </resources>

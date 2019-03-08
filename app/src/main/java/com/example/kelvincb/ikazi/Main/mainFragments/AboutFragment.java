@@ -1,6 +1,7 @@
 package com.example.kelvincb.ikazi.Main.mainFragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,12 +34,35 @@ public class AboutFragment extends Fragment {
             }
         });
 
+        Element signup=new Element();
+        signup.setTitle("Sign Up as a worker");
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        Element hireus=new Element();
+        hireus.setTitle("Hire us to make an app");
+        hireus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "+25422146246", null));
+                startActivity(intent);
+            }
+        });
+
+
 
         String description=getActivity().getResources().getString(R.string.slide_1_desc);
         View aboutPage = new AboutPage(getContext())
                 .isRTL(false)
                 .addItem(versionElement)
+                .addItem(signup)
                 .addItem(adelement)
+                .addItem(hireus )
                 .setDescription(description)
                 .setImage(R.drawable.ic_launcher_background)
 
