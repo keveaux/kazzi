@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.mainFragments.sendRequestPackage.sendRequestActivity">
+    tools:context="com.kazzi.Main.mainFragments.sendRequestPackage.sendRequestActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/send_request_toolbar"

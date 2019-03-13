@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Main.mainFragments.availableWorkers.availableWorkersFragment">
+    tools:context="com.kazzi.Main.mainFragments.availableWorkers.availableWorkersFragment">
 
 
         <TextView
@@ -69,8 +69,6 @@
             android:divider="@null"
             android:dividerHeight="0dp"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="99dp"
             />
 
         <android.support.design.widget.FloatingActionButton

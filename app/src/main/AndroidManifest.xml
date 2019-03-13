@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kelvincb.ikazi">
+    package="com.kazzi">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -26,32 +26,31 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".WorkerProfile.WorkerProfileActivity"></activity>
-        <activity android:name=".mytrial"></activity>
+        <activity android:name="com.kazzi.Main.mainFragments.availableWorkers.WorkerProfile.WorkerProfileActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAdbphG3i7Vi0mrSWvY3LV9newFhHrIvcE" />
 
         <activity
-            android:name=".UserLoginAndRegister.LoginRegisterActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:name="com.kazzi.UserLoginAndRegister.LoginRegisterActivity"
+             />
         <activity
-            android:name=".Main.MainActivity"
+            android:name="com.kazzi.Main.MainActivity"
             android:windowSoftInputMode="adjustResize" />
 
-        <service android:name=".UserLoginAndRegister.userLogin.firebaseStuff.MyFirebaseMessagingService">
+        <service android:name="com.kazzi.UserLoginAndRegister.userLogin.firebaseStuff.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".UserLoginAndRegister.userLogin.firebaseStuff.MyFirebaseInstanceIdService">
+        <service android:name="com.kazzi.UserLoginAndRegister.userLogin.firebaseStuff.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".IntroSlider.WelcomeActivity">
+        <activity android:name="com.kazzi.IntroSlider.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,26 +58,25 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Main.mainFragments.availableWorkers.mLocation.autoCompleteLocation" />
-        <activity android:name=".Main.mainFragments.userHistory.processedRequestPackage.processedInfo" />
+        <activity android:name="com.kazzi.Main.mainFragments.availableWorkers.mLocation.autoCompleteLocation" />
+        <activity android:name="com.kazzi.Main.mainFragments.userHistory.processedRequestPackage.processedInfo" />
         <activity
-            android:name=".splashScreen.SplashScreenActivity"
+            android:name="com.kazzi.splashScreen.SplashScreenActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
 
-        <service android:name=".FCMMessagingService">
+        <service android:name="com.kazzi.FCMMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".RequestRejected" />
-        <activity android:name=".trial"></activity>
-        <activity android:name=".Main.mainFragments.availableWorkers.AvailableWorkers" />
+        <activity android:name="com.kazzi.RequestRejected" />
+        <activity android:name="com.kazzi.Main.mainFragments.availableWorkers.AvailableWorkers" />
         <activity
-            android:name=".Main.mainFragments.sendRequestPackage.sendRequestActivity"
+            android:name="com.kazzi.Main.mainFragments.sendRequestPackage.sendRequestActivity"
             android:windowSoftInputMode="stateHidden" />
     </application>
 

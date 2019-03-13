@@ -5,15 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/strokeColor"
-    tools:context=".WorkerProfile.WorkerProfileActivity">
-
+>
     <android.support.v7.widget.Toolbar
         android:id="@+id/profile_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/strokeColor"
-        app:navigationIcon="@drawable/left_arrow"
+        android:background="@color/colorPrimary"
         app:theme="@style/ToolBarStyle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="start"
+            android:text="profile"
+            android:textSize="23sp"
+            android:textColor="@color/strokeColor"
+            android:textStyle="bold"
+            />
     </android.support.v7.widget.Toolbar>
 
     <View

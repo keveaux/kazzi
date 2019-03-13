@@ -32,7 +32,7 @@
                 />
 
 
-            <com.mikhaellopez.circularimageview.CircularImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circularWorkerImageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"

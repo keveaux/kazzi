@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:background="@color/strokeColor"
     android:layout_height="match_parent"
-    tools:context=".Main.MainActivity">
+    tools:context="com.kazzi.Main.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_toolbar"

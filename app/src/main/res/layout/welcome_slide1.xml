@@ -7,10 +7,15 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/introimage"
-        android:alpha="0.2"
+        android:src="@drawable/photographer"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70ffffff">
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -32,6 +37,8 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/text"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
